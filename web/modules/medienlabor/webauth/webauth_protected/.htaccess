@@ -1,0 +1,4 @@
+AuthType WebAuth
+require valid-user
+# Remove D8-Forbidden "Deny access to any other PHP files that do not match the rules above."
+RewriteRule ^\.*($|/) - [L]

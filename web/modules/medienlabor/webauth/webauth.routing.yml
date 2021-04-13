@@ -1,0 +1,64 @@
+webauth.preparelogin:
+    path: '/webauth/preparelogin'
+    defaults:
+        _controller: '\Drupal\webauth\Controller\WebauthController::prepareLogin'
+        _title: 'HI'
+    requirements:
+        _access: 'TRUE'
+    options:
+        no_cache: 'TRUE'
+        
+
+
+webauth.login:
+    path: '/webauth/login/{base64_encryptedlogin}'
+    defaults:
+        _controller: '\Drupal\webauth\Controller\WebauthController::login'
+        _title: 'HI'
+    requirements:
+        _access: 'TRUE'
+    options:
+        no_cache: 'TRUE'
+   
+   
+webauth.switch:
+    path: '/webauth/switch/{switch_uname}'
+    defaults:
+        _controller: '\Drupal\webauth\Controller\WebauthController::switch'
+        _title: 'HI'
+    requirements:
+       _custom_access: 'webauth.userswitch_access::access'
+    options:
+        no_cache: 'TRUE'
+
+webauth.test:
+    path: '/webauth/test'
+    defaults:
+        _controller: '\Drupal\webauth\Controller\WebauthController::test'
+        _title: 'HI'
+    requirements:
+        _custom_access: 'webauth.userswitch_access::access'
+    options:
+        no_cache: 'TRUE'
+   
+
+webauth.set:
+    path: '/webauth/set'
+    defaults:
+        _controller: '\Drupal\webauth\Controller\WebauthController::set'
+        _title: 'HI'
+    requirements:
+        _access: 'TRUE' #todo: checkadmin
+    options:
+        no_cache: 'TRUE'
+
+webauth.get:
+    path: '/webauth/get'
+    defaults:
+        _controller: '\Drupal\webauth\Controller\WebauthController::get'
+        _title: 'HI'
+    requirements:
+        _custom_access: 'webauth.userswitch_access::access'
+    options:
+        no_cache: 'TRUE'
+   

@@ -1,0 +1,10 @@
+name: Webauth login & registration for Drupal8
+type: module
+description: 'Register and login using webauth'
+package: login
+core: 8.x
+core_version_requirement: ^8 || ^9
+version: '8.x-1.0'
+dependencies:
+  - drupal:user
+  - drupal:node

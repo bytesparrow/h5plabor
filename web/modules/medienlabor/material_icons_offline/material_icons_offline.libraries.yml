@@ -1,0 +1,5 @@
+material-icons:
+  version: 4.x
+  css:
+    theme:
+      assets/material_icons.css: {}

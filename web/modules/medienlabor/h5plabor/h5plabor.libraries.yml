@@ -1,0 +1,7 @@
+h5plabor-assets:
+  js:
+     assets/h5plabor.js: {}
+  dependencies:  
+    - core/drupal
+    - core/jquery
+    - core/drupalSettings

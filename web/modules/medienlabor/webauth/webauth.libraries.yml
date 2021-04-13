@@ -1,0 +1,5 @@
+webauth-css:
+  version: 1.x
+  css:
+    theme:
+      assets/webauth.css: {}

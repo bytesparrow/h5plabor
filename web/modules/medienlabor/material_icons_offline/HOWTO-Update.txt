@@ -1,0 +1,19 @@
+Download latest release (zip) from https://github.com/petergng/material-icon-font
+
+copy contents from folder "bin" to folder assets/icons
+
+remove the icons/XXX/svg/ - folders
+
+done
+
+
+------
+(see: 2019 Update on  https://stackoverflow.com/questions/37270835/how-to-host-material-icons-offline)
+
+--
+
+HINT
+Das eigentlich REPO ist https://github.com/google/material-design-icons
+Aber da fehlt die .woff und .woff2-dateien
+google empfiehlt halt ihren eigenen service..
+https://github.com/google/material-design-icons/issues/1092

@@ -1,0 +1,12 @@
+name: H5PLabor Customization
+type: module
+description: 'Customization for H5PLabor'
+package: medienlabor
+core: 8.x
+core_version_requirement: ^8 || ^9
+version: '8.x-1.0'
+dependencies:
+  - drupal:user
+  - drupal:node
+  - h5p
+  - barrio_h5plabor

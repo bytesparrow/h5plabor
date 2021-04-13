@@ -1,0 +1,9 @@
+<?php
+/**
+ * implements hook_page_attachments(array &$attachments)
+ * @param array $page
+ */
+function material_icons_offline_page_attachments(array &$attachments) { 
+
+  $attachments['#attached']['library'][] = 'material_icons_offline/material-icons';
+}

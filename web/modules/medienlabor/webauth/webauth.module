@@ -1,0 +1,83 @@
+<?php
+
+use Drupal\Core\Form\FormState;
+
+require(dirname(__FILE__) . '/secured_en_decrypt.php');
+/*
+  function webauth_variable_info($options) {
+  $variables['webauth_key'] = array(
+  'type' => 'text',
+  'title' => t('Webauth secret key for en-decrypting', array(), $options),
+  'default' => openssl_random_pseudo_bytes(32),
+  'multidomain' => FALSE,
+  'description' => t('This key is used to encrypt your webauth-login-username.', array(), $options),
+  );
+  return $variables;
+  }
+
+
+ */
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * @param $form
+ *   Built form array.
+ *
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *    Form stat object.
+ *
+ * @param $form_id
+ *    Form ID.
+ */
+function webauth_form_user_form_alter(&$form, FormState $form_state, $form_id) {
+
+  //nur beim bearbeiten, nicht auf der register-form
+  if ($form_id == 'user_register_form') {
+    return;
+  }
+  // Disable option to change username and give reason why.
+  $form['account']['name']['#disabled'] = TRUE;
+  $form['account']['name']['#description'] = t('This value cannot be changed.');
+  // Disable password fields and checking on user account edits.
+  $form['account']['pass']['#access'] = FALSE;
+  $form['account']['current_pass']['#access'] = FALSE;
+  $form['account']['current_pass_required_values']['#access'] = FALSE;
+}
+
+
+
+
+ 
+/**
+ * Implements hook_preprocess_menu().
+ * 
+ * @param type $variables
+ */
+function webauth_preprocess_menu(&$variables, $hook) {
+
+  //only for usermenu
+  if ($hook != 'menu__account') {
+    return;
+  }
+ 
+  $items = $variables['items'];
+  foreach ($items as $key => &$item) {
+ 
+    //remove logout-link
+    if ($key == 'user.logout' && \Drupal::currentUser()->isAuthenticated()) {
+      unset($variables['items'][$key]);
+    }
+    //TODO ? Remove ??  view.webauth_user_switch.page
+  }
+}
+
+
+/**
+ * implements hook_page_attachments(array &$attachments)
+ * @param array $page
+ */
+function webauth_page_attachments(array &$attachments) { 
+
+  $attachments['#attached']['library'][] = 'webauth/webauth-css';
+}

@@ -1,0 +1,27 @@
+services:
+
+  # Checking if users are logged in properly when session exists.
+  webauth.authentication.webauth:
+    class: Drupal\webauth\Authentication\Provider\WebauthAuthentication
+    arguments: ['@session_configuration', '@database']
+
+    # We need this to be more prioritized than deault cookie provider since we don't need
+    # cookie provider while this module enabled.
+    tags:
+      - { name: authentication_provider, provider_id: 'webauth', priority: 100, global: TRUE }
+
+
+# Route subscriber to alter user-releated routes, like, login/logout/register/etc.
+  webauth.route_subscriber:
+   class: Drupal\webauth\Routing\WebauthRouteSubscriber
+   tags:
+     - { name: event_subscriber }
+
+  webauth.user_info:
+   class: Drupal\webauth\Service\UserInfo
+   arguments: ['@session','@database']
+
+  webauth.userswitch_access:
+    class: Drupal\webauth\Access\WebauthUserSwitchCheck
+    tags:
+      - { name: access_check }

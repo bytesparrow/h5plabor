@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_system_theme_settings_alter() for settings form.
+ *
+ * Replace Barrio setting options with subtheme ones.
+ *
+ * Example on how to alter theme settings form
+ */
+function barrio_h5plabor_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = [
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  ];
+  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = [
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  ];
+}
+
+/*
+function barrio_h5plabor_theme($existing, $type, $theme, $path) {
+  return [
+    'views-exposed-form-h5p-list-h5p-block' => [
+      'render element' => 'form',
+    ],
+  ];
+}*/
+
+
+function barrio_h5plabor_theme($existing, $type, $theme, $path) {
+  
+  $exposed_filter_template_name = 'views-exposed-title-filter-form';
+  return [
+    'views_exposed_form__h5p_list__h5p_block' => [
+      'render element' => 'form',
+        'template' => $exposed_filter_template_name,
+    ],
+    'views_exposed_form__webauth_user_switch__page'=> [
+      'render element' => 'form',
+        'template' => $exposed_filter_template_name,
+    ],
+    
+  ];
+}

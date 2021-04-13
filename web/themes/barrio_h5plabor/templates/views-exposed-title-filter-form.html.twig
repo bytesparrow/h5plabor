@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Theme override for a views exposed form.
+ *
+ * nicht so ganz cool. so ziemlich hingeschustert. funzioniert aber für homepage.
+ * @see https://makedrupaleasy.com/articles/drupal-8-9-make-beautiful-views-exposed-filters-form-custom-twig-template-and-bootstrap
+ */
+#}
+{% if q is not empty %}
+    {#
+      This ensures that, if clean URLs are off, the 'q' is added first,
+      as a hidden form element, so that it shows up first in the POST URL.
+    #}
+    {{ q }}
+{% endif %}
+
+
+<div class="form-row">
+    <div class="row">
+        <div class="col-4">
+            {% if form.title is not empty %}
+                <!--<label>{{ "Subject"|t }}</label>-->
+                {{ form.title }}
+            {% endif %}
+            {% if form.uid is not empty %}
+                {{ form.uid }}
+            {% endif %}
+
+        </div>
+        <div class="col-8">
+
+            <!--<label for="edit-actions">&nbsp;TEST</label>-->
+
+            {{ form.actions }}
+        </div>
+    </div>
+
+
+
+</div>

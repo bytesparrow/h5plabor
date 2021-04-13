@@ -1,0 +1,7 @@
+name: Material Icons Offline
+type: module
+description: 'Add the "material icons" to Drupal8. Find the icons on https://fonts.google.com/icons'
+package: medienlabor
+core: 8.x
+core_version_requirement: ^8 || ^9
+version: '8.x-1.0'

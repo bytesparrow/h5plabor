@@ -1,0 +1,40 @@
+/**
+ * @file
+ * Subtheme specific CSS.
+ */
+
+body.path-frontpage
+{
+    background: url('../images/background-onlinekurslabor.jpg');
+}
+#page,
+#main-wrapper,
+.region-primary-menu .menu-item a.is-active,
+.region-primary-menu .menu-item--active-trail a, .site-footer {
+background:none !important;
+}
+
+div#main-wrapper
+{
+    padding-top:20px;
+}
+
+
+
+
+/**
+Footer Menu horizontal
+*/
+nav#block-barrio-h5plabor-footer.menu--footer a.nav-link
+{
+    display: inline-block;
+    padding: 1rem 1rem;
+}
+nav#block-barrio-h5plabor-footer.menu--footer a.nav-link::before
+{
+    display: none;
+}
+
+a.navbar-brand {
+    margin-left: 4rem;
+}
