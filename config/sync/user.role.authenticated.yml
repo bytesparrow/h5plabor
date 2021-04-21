@@ -1,0 +1,24 @@
+uuid: e5cf05bb-4fa9-462b-b3a6-f7d5f8885d82
+langcode: de
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
+id: authenticated
+label: 'Angemeldeter Benutzer'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access editor'
+  - 'access own h5p results'
+  - 'access shortcuts'
+  - 'copy own h5ps'
+  - 'create h5p content'
+  - 'delete h5p revisions'
+  - 'delete own h5p content'
+  - 'download own h5ps'
+  - 'edit own h5p content'
+  - 'revert h5p revisions'
+  - 'use text format basic_html'
+  - 'view h5p revisions'

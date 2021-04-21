@@ -1,0 +1,32 @@
+uuid: b826dff9-0b15-4346-b48c-8183d9bf0d5e
+langcode: de
+status: true
+dependencies:
+  config:
+    - block_content.type.reference_block
+    - field.storage.block_content.field_ref
+    - node.type.article
+    - node.type.h5p
+    - node.type.page
+id: block_content.reference_block.field_ref
+field_name: field_ref
+entity_type: block_content
+bundle: reference_block
+label: ref
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      page: page
+      h5p: h5p
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: article
+field_type: entity_reference

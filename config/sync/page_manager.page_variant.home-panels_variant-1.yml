@@ -1,0 +1,65 @@
+uuid: 8965f36e-7801-44fc-bd9d-73cc0d506ee5
+langcode: de
+status: true
+dependencies:
+  config:
+    - page_manager.page.home
+  content:
+    - 'block_content:basic:28b6d4a7-12f1-44f7-914c-00c9e8895d5c'
+    - 'block_content:reference_block:b04be800-678f-473c-a6ea-93b888895024'
+  module:
+    - block_content
+    - panels
+    - user
+id: home-panels_variant-1
+label: loggedout
+variant: panels_variant
+variant_settings:
+  blocks:
+    d08abf79-fa8e-47e1-b7f5-d35379620a71:
+      id: 'block_content:28b6d4a7-12f1-44f7-914c-00c9e8895d5c'
+      label: Ausgeloggt
+      provider: block_content
+      label_display: visible
+      status: true
+      info: ''
+      view_mode: full
+      region: content
+      weight: 1
+      uuid: d08abf79-fa8e-47e1-b7f5-d35379620a71
+      context_mapping: {  }
+    506f8c1c-c8c9-4f1a-912c-bf2f3823d941:
+      id: 'block_content:b04be800-678f-473c-a6ea-93b888895024'
+      label: '[block] H5PLabor-About'
+      provider: block_content
+      label_display: '0'
+      status: true
+      info: ''
+      view_mode: vollstaendig_ohne_titles
+      region: content
+      weight: 0
+      uuid: 506f8c1c-c8c9-4f1a-912c-bf2f3823d941
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 56077cdd-0dd8-4351-af6c-edcbf6f25d13
+  label: null
+  weight: 0
+  layout: layout_onecol
+  layout_settings:
+    label: loggedout
+  page_title: ''
+  storage_type: page_manager
+  storage_id: home-panels_variant-1
+  builder: standard
+page: home
+weight: 0
+selection_criteria:
+  -
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: true
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+selection_logic: and
+static_context: {  }

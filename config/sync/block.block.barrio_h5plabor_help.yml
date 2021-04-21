@@ -1,0 +1,22 @@
+uuid: 4be8e6f9-90fa-4f1b-81a8-59a400272fc4
+langcode: de
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - barrio_h5plabor
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: barrio_h5plabor_help
+theme: barrio_h5plabor
+region: content
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Hilfe
+  provider: help
+  label_display: '0'
+visibility: {  }

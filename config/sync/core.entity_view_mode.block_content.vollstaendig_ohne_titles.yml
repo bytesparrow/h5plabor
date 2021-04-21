@@ -1,0 +1,10 @@
+uuid: 1ddcacc6-8cb8-490f-b422-33b3f2697c45
+langcode: de
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.vollstaendig_ohne_titles
+label: 'Vollständig ohne Titles'
+targetEntityType: block_content
+cache: true

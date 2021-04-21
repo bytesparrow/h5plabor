@@ -1,0 +1,21 @@
+uuid: a7bab09f-cfb5-4d72-807f-2aa497d3c1d1
+langcode: de
+status: true
+dependencies:
+  config:
+    - page_manager.page.frontpage
+id: frontpage-http_status_code-0
+label: HTTP-Statuscode
+variant: http_status_code
+variant_settings:
+  id: http_status_code
+  uuid: 5f8c935e-6ce5-4ad7-9acd-885c12602a4d
+  label: null
+  weight: 0
+  status_code: 302
+  redirect_location: /
+page: frontpage
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

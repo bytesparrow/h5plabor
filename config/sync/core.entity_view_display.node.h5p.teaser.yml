@@ -1,0 +1,23 @@
+uuid: 02fbc932-3d56-4557-964b-b9a60d6d3edc
+langcode: de
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.h5p.field_h5p
+    - node.type.h5p
+  module:
+    - user
+id: node.h5p.teaser
+targetEntityType: node
+bundle: h5p
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_h5p: true
+  langcode: true

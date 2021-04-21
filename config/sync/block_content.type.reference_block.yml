@@ -1,0 +1,8 @@
+uuid: b2eccacf-c9da-4e8f-8176-d8c134e4f9c5
+langcode: de
+status: true
+dependencies: {  }
+id: reference_block
+label: Reference-Block
+revision: 0
+description: 'Has a reference to a node'

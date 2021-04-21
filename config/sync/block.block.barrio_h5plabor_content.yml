@@ -1,0 +1,22 @@
+uuid: d378956d-61a0-4318-b9a0-9cd795c9e0fe
+langcode: de
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - barrio_h5plabor
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: barrio_h5plabor_content
+theme: barrio_h5plabor
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: Haupt-Seiteninhalt
+  provider: system
+  label_display: '0'
+visibility: {  }

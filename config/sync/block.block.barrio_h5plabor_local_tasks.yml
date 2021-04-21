@@ -1,0 +1,22 @@
+uuid: ef99f9f1-efd4-4cb6-853a-6a4edee5d9b3
+langcode: de
+status: true
+dependencies:
+  theme:
+    - barrio_h5plabor
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: barrio_h5plabor_local_tasks
+theme: barrio_h5plabor
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Reiter
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

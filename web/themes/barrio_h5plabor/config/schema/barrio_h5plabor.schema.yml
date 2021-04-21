@@ -2,4 +2,4 @@
 
 barrio_h5plabor.settings:
   type: bootstrap_barrio.settings
-  label: 'Bootstrap Barrio settings'
+  label: 'H5Plabor Barrio settings'

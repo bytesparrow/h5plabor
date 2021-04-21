@@ -1,0 +1,11 @@
+uuid: 800dc623-cba8-4948-b6dc-955415c5d7f5
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.h5p
+id: node.h5p
+target_entity_type_id: node
+target_bundle: h5p
+default_langcode: site_default
+language_alterable: false

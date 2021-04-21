@@ -1,0 +1,10 @@
+uuid: 7cb74453-8124-402d-8838-5fa958706385
+langcode: de
+status: true
+dependencies:
+  module:
+    - node
+id: node.vollstaendiger_inhalt_ohne_title
+label: 'Vollständiger Inhalt ohne title'
+targetEntityType: node
+cache: true

@@ -1,0 +1,13 @@
+uuid: 19bace15-53bf-4a46-8f1a-1d42f55154a6
+langcode: de
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: lDM9mvIGAu8Sw8rt-uCO4Sr7yX5VPrDPxYcawkbKd6k
+id: node_make_unsticky_action
+label: 'Hervorhebung des Inhalts aufheben'
+type: node
+plugin: node_make_unsticky_action
+configuration: {  }

@@ -1,0 +1,25 @@
+uuid: 8a118688-3156-4a05-bd75-26f611bda03b
+langcode: de
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f99406ac-57a0-47c4-9443-ef604a102107'
+  module:
+    - block_content
+  theme:
+    - barrio_h5plabor
+id: hr
+theme: barrio_h5plabor
+region: featured_bottom_third
+weight: -6
+provider: null
+plugin: 'block_content:f99406ac-57a0-47c4-9443-ef604a102107'
+settings:
+  id: 'block_content:f99406ac-57a0-47c4-9443-ef604a102107'
+  label: '<hr>'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -20,7 +20,7 @@
 # Ignore configuration files that may contain sensitive information.
 sites/*/settings*.php
 sites/*/services*.yml
-
+sites/*/site_environment.php
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
@@ -40,3 +40,5 @@ sites/simpletest
 
 # Ignore SimpleTest multi-site environment.
 # simpletest
+/.gitattributes
+/example.gitignore

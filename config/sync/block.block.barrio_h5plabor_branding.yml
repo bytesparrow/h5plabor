@@ -1,0 +1,25 @@
+uuid: 31841ea8-5d8a-41dc-82f5-f35bd5e44d14
+langcode: de
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - barrio_h5plabor
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: barrio_h5plabor_branding
+theme: barrio_h5plabor
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Branding der Website'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

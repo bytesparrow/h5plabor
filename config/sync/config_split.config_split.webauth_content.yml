@@ -1,0 +1,17 @@
+uuid: d0cef5b7-6ea5-4d2a-a949-f3e07ad3f474
+langcode: de
+status: true
+dependencies: {  }
+id: webauth_content
+label: webauth_content
+description: 'contains the configuration [views etc] for the webauth module'
+folder: modules/medienlabor/webauth/config/install
+module:
+  webauth: 0
+theme: {  }
+blacklist:
+  - views.view.webauth_user_switch
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0
