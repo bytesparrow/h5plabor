@@ -9,4 +9,3 @@ dependencies:
   - drupal:user
   - drupal:node
   - h5p
-  - barrio_h5plabor
