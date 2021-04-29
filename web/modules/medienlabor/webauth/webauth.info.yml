@@ -8,3 +8,6 @@ version: '8.x-1.0'
 dependencies:
   - drupal:user
   - drupal:node
+  
+'interface translation project': webauth
+'interface translation server pattern': modules/medienlabor/webauth/translations/webauth-%language.po

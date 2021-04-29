@@ -1,0 +1,12 @@
+
+msgid "Your Login was not accepted"
+msgstr "Ihr Login wurde nicht akzeptiert"
+
+msgid "Hello %s, you are logged in now"
+msgstr "Hallo %s, Sie sind jetzt eingeloggt"
+
+msgid "You are switching to %s"
+msgstr "Sie wechseln zu %s"
+
+msgid "This value cannot be changed."
+msgstr "Dieser Wert kann nicht geändert werden."
