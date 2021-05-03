@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Route;
  * @ViewsAccess(
  *   id = "canswitchaccount",
  *   title = @Translation("Can switch to other accounts"),
- *   help = @Translation("Is the authorized user as admin permission, he may switch to another account.")
+ *   help = @Translation("If the authorized user's primary account as admin permission, he may switch to another account.")
  * )
  */
 

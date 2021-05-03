@@ -10,3 +10,9 @@ msgstr "Sie wechseln zu %s"
 
 msgid "This value cannot be changed."
 msgstr "Dieser Wert kann nicht geändert werden."
+
+msgid "Can switch to other accounts"
+msgstr "Person kann auf einen anderen Account wechseln"
+
+vmsgid "If the authorized user's primary account as admin permission, he may switch to another account."
+msgstr "Wenn der Hauptaccount einer authorisierten Person die admin-Berechtigung hat, kann diese Person auf einen anderen Account wechseln."
