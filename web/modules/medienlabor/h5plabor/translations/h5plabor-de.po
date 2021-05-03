@@ -1,0 +1,3 @@
+
+msgid "NOTE: on %stamp all content on this platform will be deleted."
+msgstr "HINWEIS: am %stamp wird jeglicher Inhalt auf dieser Plattform gelöscht."

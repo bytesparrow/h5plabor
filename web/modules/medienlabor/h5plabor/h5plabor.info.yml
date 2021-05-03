@@ -9,3 +9,7 @@ dependencies:
   - drupal:user
   - drupal:node
   - h5p
+  
+  
+'interface translation project': h5plabor
+'interface translation server pattern': modules/medienlabor/h5plabor/translations/h5plabor-%language.po

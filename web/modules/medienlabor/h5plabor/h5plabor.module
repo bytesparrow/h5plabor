@@ -37,13 +37,12 @@ function h5plabor_form_node_h5p_form_alter(&$form, FormState $form_state, $form_
   $form['options']['#access'] = FALSE;
   $form['path']['#access'] = FALSE;
 
-  #    var_dump($form['field_h5p']['widget'][0]['h5p_content'] );
+  //das is echt n Rotz. Ist der letzte Teil einer Zeichenkette eine Variable ("%s", "%text"), schlägt die Übersetzung still und leise fehl.
+  $delete_notice_text = t('NOTE: on %stamp all content on this platform will be deleted.', array('%stamp' => date('d.m.Y', NEXT_DELETE_TIMESTAMP)));
   $form['field_h5p']['widget'][0]['h5p_content']['clear_content'] ['#access'] = FALSE;
   $form['field_h5p']['widget'][0]['h5p_content']['frame'] ['#access'] = FALSE;
   $form['field_h5p']['widget'][0]['h5p_content']['copyright'] ['#access'] = FALSE;
-  $form['field_h5p']['#prefix'] = '<div class="alert alert-primary" role="alert">
-  '.t('Please consider: All content on this platform will be deleted on %s', array('%s'=>date('d.m.Y', NEXT_DELETE_TIMESTAMP))).'
-</div>';
+  $form['field_h5p']['#prefix'] = '<div class="alert alert-primary" role="alert">' . $delete_notice_text . '</div>';
   //add validation. die fehlt dem H5P-Modul noch. Nach Hochladen-Klick ohne "Benutzen" klicken, ist der Wert leer & führt zu exceptions
   //NUR FÜR DEN HUB BENÖTIGT $form['#validate'][] = '_h5plabor_form_h5p_validate';
 }
