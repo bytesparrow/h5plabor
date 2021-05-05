@@ -1,3 +1,6 @@
 
+msgid "THIS IS JUST A DUMMY FOR DRUPAL-T BEING BUGGY!"
+msgstr "DIES IST NUR EIN DUMMY WEIL DRUPAL-T BUGGY IST!"
+
 msgid "NOTE: on %stamp all content on this platform will be deleted."
 msgstr "HINWEIS: am %stamp wird jeglicher Inhalt auf dieser Plattform gelöscht."
