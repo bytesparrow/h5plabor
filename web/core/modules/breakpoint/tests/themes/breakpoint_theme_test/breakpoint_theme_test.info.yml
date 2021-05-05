@@ -5,7 +5,7 @@ description: 'Test theme for breakpoint.'
 core: 8.x
 base theme: bartik
 
-# Information added by Drupal.org packaging script on 2021-04-21
-version: '8.9.14'
+# Information added by Drupal.org packaging script on 2021-05-05
+version: '8.9.15'
 project: 'drupal'
-datestamp: 1619021571
+datestamp: 1620217051
