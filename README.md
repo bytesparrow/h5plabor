@@ -72,6 +72,7 @@ Create the webauth-secret keys (see FILE: webauth-module/README.txt) and store t
 - drush cim 
 - drush locale-check && drush locale-update && drush cr
 
+
 Goto: admin/appearance/settings/barrio_h5plabor - 
 Click "save"
 
@@ -84,13 +85,8 @@ Import blocks:
 - drush import-all 
 (prompt answer is always "1")
 
-Import language:
-
-drush locale-check && drush locale-update && drush cr
 
 
-
-Goto: admin/content/h5p
-Install desired libraries from h5p.org
+Goto: admin/content/h5p - Install desired libraries from h5p.org
 
 **Your Site should be done.**
