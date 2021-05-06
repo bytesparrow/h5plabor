@@ -1,5 +1,6 @@
 # H5PLabor
 A drupal project to let users create H5P-objects
+
 Project is to be used @Medienlabor @Universität Augsburg, Bavaria, Germany.
 
 Provided in the hope it is usefull without any warranty.
@@ -35,8 +36,9 @@ Visit your new website
 
 Install "standard" (not: minimal)
 
+Goto: /user and add the role "administrator" to your useraccount
 
-Goto admin/config/user-interface/shortcut/manage/default/customize -> delete all links
+Goto: admin/config/user-interface/shortcut/manage/default/customize -> delete all links
 
 - drush cset system.site uuid b61929b4-12e6-4382-86a8-624959b78517
 - drush cset language.entity.de uuid f1505574-d36f-4d8c-a8fc-88317c4ff411
@@ -62,18 +64,20 @@ switch($site_environment){
 
 }
 ```
+
 Create the webauth-secret keys (see FILE: webauth-module/README.txt) and store the keys in settings.php
 
 
 
 - drush cim 
+- drush locale-check && drush locale-update && drush cr
 
 
-Goto: admin/appearance/settings/barrio_h5plabor
+Goto: admin/appearance/settings/barrio_h5plabor - 
 Click "save"
 
 
-Goto: /node/add/page 
+Goto: /node/add/page - 
 Create: "Über" Seite ("About" page)
 
 
@@ -82,7 +86,7 @@ Import blocks:
 (prompt answer is always "1")
 
 
-Goto: admin/content/h5p
-Install desired libraries from h5p.org
+
+Goto: admin/content/h5p - Install desired libraries from h5p.org
 
 **Your Site should be done.**
