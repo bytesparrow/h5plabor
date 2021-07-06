@@ -16,7 +16,7 @@
     ],
     "require": {
         "composer/installers": "^1.2",
-        "drupal/bootstrap_barrio": "^5.5@beta",
+        "drupal/bootstrap_barrio": "^5.5",
         "drupal/config_filter": "^2.2",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
