@@ -15,6 +15,8 @@ libraries-extend:
     - bootstrap_barrio/file
   views/views.ajax:
     - bootstrap_barrio/views.ajax
+  node/drupal.node.preview:
+    - bootstrap_barrio/drupal.node.preview
 
 ckeditor_stylesheets:
   - css/components/table.css
@@ -43,7 +45,7 @@ regions:
   footer_fourth: 'Footer fourth'
   footer_fifth: 'Footer fifth'
 
-# Information added by Drupal.org packaging script on 2021-03-08
-version: '5.5.0-beta2'
+# Information added by Drupal.org packaging script on 2021-05-23
+version: '5.5.1'
 project: 'bootstrap_barrio'
-datestamp: 1615173798
+datestamp: 1621798748
