@@ -38,3 +38,10 @@ nav#block-barrio-h5plabor-footer.menu--footer a.nav-link::before
 a.navbar-brand {
     margin-left: 4rem;
 }
+
+
+/*headline tables*/
+table tr th, table tr th a, table tr th a:hover, table tr th a:focus {
+    color: #343979;
+    font-weight: normal;
+}
