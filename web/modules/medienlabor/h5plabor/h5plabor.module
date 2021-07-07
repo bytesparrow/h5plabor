@@ -81,9 +81,24 @@ function h5plabor_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
         $h5ptitle = $h5p_content_decoded->metadata->title;
       }
       catch (Exception $ex) {
+        //Alternative: Upload von Files
+        if (is_array($_FILES)) {
+          $candidates = $_FILES['files']['name'];
+          
+          foreach ($candidates as $upload_field_name => $upload_filename) {
+            if (strstr($upload_field_name, 'field_h5p')) {
+              //ersetze "-" (außer bei \d-) und file-ending durch " "
+              $regex = ['/(?<!\d)(-)+/i', '/\.h5p/i'];
+              $h5ptitle = ucfirst(trim(preg_replace($regex, ' ', $upload_filename)));
+              //dpm($h5ptitle);
+              break;
+            }
+          }
+        }
+      }
+      if (!$h5ptitle) {
         $h5ptitle = '-- unserialization failed --';
       }
-
       $entity->setTitle($h5ptitle);
       break;
   }
