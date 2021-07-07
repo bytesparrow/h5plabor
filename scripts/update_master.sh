@@ -4,7 +4,7 @@
 
 drush sset system.maintenance_mode 1
 
-drush cr 
-drush updatedb
+drush cache-rebuild
+drush updatedb --yes
 
 drush sset system.maintenance_mode 0
