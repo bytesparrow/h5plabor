@@ -4,7 +4,7 @@
 
 drush sset system.maintenance_mode 1
 drush locale-check && drush locale-update && drush cr
-drush cim
+drush cim --yes
 drush cache-rebuild
 drush updatedb --yes
 
