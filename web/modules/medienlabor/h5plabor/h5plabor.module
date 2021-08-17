@@ -123,3 +123,16 @@ function h5plabor_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 function h5plabor_menu_links_discovered_alter(&$links) {
   $links['user.page']['class'] = 'Drupal\h5plabor\Plugin\Menu\PersonalizedPageLink';
 }
+
+
+
+/**
+ * Helperfunktion für Updates. Setzt den embed-typ für InteractiveVideo auf DIV statt IFRAME,
+ * weil sonst alle anderen Features (AnnVid, Sprungmarken etc) nicht gehen
+ */
+function _h5plabor_set_interactiveVideoToDivEmbed() {
+  $connection = \Drupal\Core\Database\Database::getConnection();
+  $connection->query("update  `h5p_libraries` set `embed_types` = 'div' WHERE `machine_name` LIKE :my_machine_name order by `library_id` desc limit 1", array(':my_machine_name' => 'H5P.InteractiveVideo'));
+
+  \Drupal::messenger()->addMessage("Updated `h5p_libraries` to use 'div' for latest 'H5P.InteractiveVideo'");
+}

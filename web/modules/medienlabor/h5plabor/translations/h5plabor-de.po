@@ -4,3 +4,7 @@ msgstr "DIES IST NUR EIN DUMMY WEIL DRUPAL-T BUGGY IST!"
 
 msgid "NOTE: on %stamp all content on this platform will be deleted."
 msgstr "HINWEIS: am %stamp wird jeglicher Inhalt auf dieser Plattform gelöscht."
+
+
+msgid "Updated `h5p_libraries` to use 'div' for latest 'H5P.InteractiveVideo'"
+msgstr "`h5p_libraries` upgedated: das aktuellste 'H5P.InteractiveVideo' nutzt nun ein 'div'"
