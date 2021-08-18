@@ -7,6 +7,24 @@ body.path-frontpage
 {
     background: url('../images/background-onlinekurslabor.jpg');
 }
+/*frontpage custom*/
+body.path-frontpage  h2.node__title
+{
+    display: none;
+}
+body.path-frontpage #main
+{
+    max-width: 1170px;
+}
+
+/*
+ * ABOUT-Page / Frontpage
+ */
+.layout--twocol-section--50-50 .layout__region--first
+{
+    padding-right: 1em;
+}
+
 #page,
 #main-wrapper,
 .region-primary-menu .menu-item a.is-active,
@@ -45,3 +63,4 @@ table tr th, table tr th a, table tr th a:hover, table tr th a:focus {
     color: #343979;
     font-weight: normal;
 }
+
