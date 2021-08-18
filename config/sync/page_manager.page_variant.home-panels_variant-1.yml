@@ -5,7 +5,6 @@ dependencies:
   config:
     - page_manager.page.home
   content:
-    - 'block_content:basic:28b6d4a7-12f1-44f7-914c-00c9e8895d5c'
     - 'block_content:reference_block:b04be800-678f-473c-a6ea-93b888895024'
   module:
     - block_content
@@ -16,18 +15,6 @@ label: loggedout
 variant: panels_variant
 variant_settings:
   blocks:
-    d08abf79-fa8e-47e1-b7f5-d35379620a71:
-      id: 'block_content:28b6d4a7-12f1-44f7-914c-00c9e8895d5c'
-      label: Ausgeloggt
-      provider: block_content
-      label_display: visible
-      status: true
-      info: ''
-      view_mode: full
-      region: content
-      weight: 1
-      uuid: d08abf79-fa8e-47e1-b7f5-d35379620a71
-      context_mapping: {  }
     506f8c1c-c8c9-4f1a-912c-bf2f3823d941:
       id: 'block_content:b04be800-678f-473c-a6ea-93b888895024'
       label: '[block] H5PLabor-About'
