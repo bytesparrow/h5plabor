@@ -1,42 +1,5 @@
-blocks:
-  -
-    info: '[block] Home-Loggedout'
-    langcode: de
-    uuid: 28b6d4a7-12f1-44f7-914c-00c9e8895d5c
-    bundle: basic
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: "<p>Hallo auf H5PLabor</p>\r\n\r\n<p>Sie sind ausgeloggt. Lorem Ipsum.</p>\r\n"
-          summary: ''
-          format: basic_html
-  -
-    info: '<hr>'
-    langcode: de
-    uuid: f99406ac-57a0-47c4-9443-ef604a102107
-    bundle: basic
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: '<hr />'
-          summary: ''
-          format: full_html
-  -
-    info: '[block] H5PLabor-About'
-    langcode: de
-    uuid: b04be800-678f-473c-a6ea-93b888895024
-    bundle: reference_block
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body: {  }
-      field_ref:
-        -
-          target_id: '1'
+taxonomies:
+  tags: {  }
 menus:
   -
     menu_name: footer
@@ -74,3 +37,42 @@ menus:
     weight: '4'
     langcode: de
     uuid: 2ae33176-1f77-4245-8c3d-e1b3b93ca0d6
+blocks:
+  -
+    info: '[block] H5PLabor-About'
+    langcode: de
+    uuid: b04be800-678f-473c-a6ea-93b888895024
+    bundle: reference_block
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body: {  }
+      field_ref:
+        -
+          target_id: '1'
+  -
+    info: '<hr>'
+    langcode: de
+    uuid: f99406ac-57a0-47c4-9443-ef604a102107
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<hr />'
+          summary: ''
+          format: full_html
+  -
+    info: '[block] Home-Loggedout'
+    langcode: de
+    uuid: 28b6d4a7-12f1-44f7-914c-00c9e8895d5c
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<p>Hallo auf H5PLabor</p>\r\n\r\n<p>Sie sind ausgeloggt. Lorem Ipsum.</p>\r\n"
+          summary: ''
+          format: basic_html
