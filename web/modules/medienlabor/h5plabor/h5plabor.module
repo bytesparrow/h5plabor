@@ -178,7 +178,7 @@ function _h5plabor_get_readable_orphan_delete_timediff() {
 }
 
 /**
- * deletes nodes and users that have not been viewed / edited (nodes) or have loggedin (users
+ * deletes nodes and users that have not been viewed / edited (nodes) or have loggedin (users)
  * within e.g. the last 180 days (depends on h5plabor.settings.orphans.delete_timeout)
  * @throws Exception if settings seem unrealistic
  */
@@ -194,7 +194,7 @@ function _h5plabor_delete_orphans() {
     $timestamp = time() - 24*60*60*30;
    */
   //dummy: 1 tage
-  $content_valid_until = strtotime("-1 days");
+  //$content_valid_until = strtotime("-1 days");
 
   //dpm("valid untiL: ".$content_valid_until);
   $orphaned_content = _h5plabor_get_unusedContentBefore($content_valid_until);
