@@ -3,7 +3,6 @@
 use Drupal\Core\Form\FormState;
 use Drupal\Core\Form\FormStateInterface;
 
-define('NEXT_DELETE_TIMESTAMP', mktime(0, 0, 0, 10, 1));
 
 /**
  * add info-text on admin/appearance/settings/barrio_h5plabor
@@ -36,8 +35,9 @@ function h5plabor_form_node_h5p_form_alter(&$form, FormState $form_state, $form_
   $form['sticky']['#access'] = FALSE;
   $form['options']['#access'] = FALSE;
   $form['path']['#access'] = FALSE;
-
-  $delete_notice_text = t('NOTE: on %stamp all content on this platform will be deleted.', array('%stamp' => date('d.m.Y', NEXT_DELETE_TIMESTAMP)));
+  #_h5plabor_delete_orphans();
+  $readable_delete_timestamp = _h5plabor_get_readable_orphan_delete_timediff();
+  $delete_notice_text = t('NOTE: H5P-objects will be deleted %stamp after their last usage.', array('%stamp' => $readable_delete_timestamp));
   $form['field_h5p']['widget'][0]['h5p_content']['clear_content'] ['#access'] = FALSE;
   $form['field_h5p']['widget'][0]['h5p_content']['frame'] ['#access'] = FALSE;
   $form['field_h5p']['widget'][0]['h5p_content']['copyright'] ['#access'] = FALSE;
@@ -84,7 +84,7 @@ function h5plabor_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
         //Alternative: Upload von Files
         if (is_array($_FILES)) {
           $candidates = $_FILES['files']['name'];
-          
+
           foreach ($candidates as $upload_field_name => $upload_filename) {
             if (strstr($upload_field_name, 'field_h5p')) {
               //ersetze "-" (außer bei \d-) und file-ending durch " "
@@ -108,7 +108,7 @@ function h5plabor_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
  * #use Drupal\Core\Form\FormStateInterface;
  */
 function h5plabor_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  #   return;
+     return;
   # var_dump($form["#id"]);
   if ($form_id == 'views_exposed_form' && in_array($form["#id"], array('views-exposed-form-h5p-list-h5p-block', 'views-exposed-form-webauth-user-switch-page'))) { #var_dump($form["#id"]);
     #var_dump($form);
@@ -124,8 +124,6 @@ function h5plabor_menu_links_discovered_alter(&$links) {
   $links['user.page']['class'] = 'Drupal\h5plabor\Plugin\Menu\PersonalizedPageLink';
 }
 
-
-
 /**
  * Helperfunktion für Updates. Setzt den embed-typ für InteractiveVideo auf DIV statt IFRAME,
  * weil sonst alle anderen Features (AnnVid, Sprungmarken etc) nicht gehen
@@ -135,4 +133,114 @@ function _h5plabor_set_interactiveVideoToDivEmbed() {
   $connection->query("update  `h5p_libraries` set `embed_types` = 'div' WHERE `machine_name` LIKE :my_machine_name order by `library_id` desc limit 1", array(':my_machine_name' => 'H5P.InteractiveVideo'));
 
   \Drupal::messenger()->addMessage("Updated `h5p_libraries` to use 'div' for latest 'H5P.InteractiveVideo'");
+}
+
+/**
+ * gets a readable representation of the config-value
+ * h5plabor.settings.orphans.delete_timeout
+ * for example "-180 days" will be "180 days" (with translation)
+ * @return string
+ */
+function _h5plabor_get_readable_orphan_delete_timediff() {
+  $delete_timediff = \Drupal::config('h5plabor.settings')->get('orphans.delete_timeout');
+  $time_span = trim(str_replace('-', '', preg_replace('/([a-zA-Z])+/', '', $delete_timediff)));
+  $time_unit_matches = null;
+  preg_match('/([a-zA-Z])+/', $delete_timediff, $time_unit_matches);
+  $time_unit = t(trim($time_unit_matches[0]));
+  $readable_timediff = $time_span . ' ' . $time_unit;
+  return $readable_timediff;
+}
+
+/**
+ * deletes nodes and users that have not been viewed / edited (nodes) or have loggedin (users
+ * within e.g. the last 180 days (depends on h5plabor.settings.orphans.delete_timeout)
+ * @throws Exception if settings seem unrealistic
+ */
+function _h5plabor_delete_orphans() {
+  $timediff = \Drupal::config('h5plabor.settings')->get('orphans.delete_timeout');
+  $content_valid_until = strtotime($timediff); //ok, passt
+  if ($content_valid_until > strtotime("-1 days")) {
+    throw new Exception('Drupal::config(\'h5plabor.settings\') seems to be wrong. Please validate.');
+  }
+
+
+  /* //dummy: 30 tage
+    $timestamp = time() - 24*60*60*30;
+   */
+  //dummy: 1 tage
+  $content_valid_until = strtotime("-1 days");
+
+  //dpm("valid untiL: ".$content_valid_until);
+  $orphaned_content = _h5plabor_get_unusedContentBefore($content_valid_until);
+  $orphaned_users = _h5plabor_get_unusedAccounts($content_valid_until);
+
+  $node_delete_counter = 0;
+  $user_delete_counter = 0;
+  if (count($orphaned_content)) {
+    $node_storage_handler = \Drupal::entityTypeManager()->getStorage("node");
+    foreach ($orphaned_content as $nid => $details) {
+      $node = $node_storage_handler->load($nid);
+      if ($node) {
+        $node->delete();
+        $node_delete_counter++;
+      }
+    }
+  }
+  if (count($orphaned_users)) {
+    $user_storage_handler = \Drupal::entityTypeManager()->getStorage("user");
+    foreach ($orphaned_users as $uid => $details) {
+      $user = $user_storage_handler->load($uid);
+      if ($user) {
+        $user->delete();
+        $user_delete_counter++;
+      }
+    }
+  }
+  if ($orphaned_content || $orphaned_users) {
+    $messenger = \Drupal::messenger();
+    $messenger->addMessage(t("Deleted %count_users users and %count_nodes h5p-objects.", array('%count_users' => $user_delete_counter, '%count_nodes' => $node_delete_counter)), $messenger::TYPE_STATUS);
+  }
+}
+
+/**
+ * get content, that has NOT been viewed nor edited AFTER the given Unix-Timestamp $timestamp
+ * @param type $timestamp Unix-Timestamp
+ * @return array nid => array(nid, title, node_last_access)
+ */
+function _h5plabor_get_unusedContentBefore($timestamp) {
+
+  $sql = "
+  select *  FROM
+  (
+    select node_table.nid, node_table.title,  GREATEST(COALESCE(node_table.changed,0), COALESCE(history_maxed.latest_access,0)) as node_last_access from (
+    #node+node_field_data ergibt bearbeitungszeitpunkt
+    select h5p_nodes.nid, h5p_nodes.type, status, uid, title, created, changed from ( select node.nid, node.type from node where node.type = 'h5p') h5p_nodes  join node_field_data on h5p_nodes.nid=node_field_data.nid) node_table LEFT join 
+    #+letzter zugriff in history
+    (select nid, max(timestamp) as latest_access from history group by nid) history_maxed on node_table.nid = history_maxed.nid 
+    ) node_visit_datatable 
+     where node_last_access  < :valid_until";
+
+  $database = \Drupal::database();
+  $query = $database->query($sql, [
+    ':valid_until' => $timestamp,
+  ]);
+  $result = $query->fetchAllAssoc('nid', PDO::FETCH_ASSOC);
+
+  return $result;
+}
+
+/**
+ * get accounts, which were last used before $last_use_before_timestamp
+ * @param type $last_use_before_timestamp
+ * @return array uid=>array(uid, last_access)
+ */
+function _h5plabor_get_unusedAccounts($last_use_before_timestamp) {
+  $sql = "select uid, access as last_access from users_field_data where access < :valid_until AND uid > 1";
+
+  $database = \Drupal::database();
+  $query = $database->query($sql, [
+    ':valid_until' => $last_use_before_timestamp,
+  ]);
+  $result = $query->fetchAllAssoc('uid', PDO::FETCH_ASSOC);
+  return $result;
 }

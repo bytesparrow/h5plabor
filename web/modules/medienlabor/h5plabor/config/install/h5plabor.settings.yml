@@ -1,0 +1,3 @@
+orphans:
+    # delete content and users last used before.... (in strtotime-compatible format)
+    delete_timeout: '-180 days'
