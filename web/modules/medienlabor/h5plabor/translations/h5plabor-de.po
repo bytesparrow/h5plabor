@@ -8,5 +8,9 @@ msgstr "HINWEIS: H5P-Elemente werden %stamp nach ihrer letzten Nutzung gelöscht
 msgid "days"
 msgstr "Tage"
 
+msgid "Contents on this platform get deleted regularly. <br>To download your H5P-object, click \"Reuse\" bottom left and \"Download\" afterwards."
+msgstr "Die Inhalte auf dieser Plattform werden in regelmäßigen Abständen gelöscht. <br>Um Ihr H5P-Element zu speichern, klicken Sie \"Reuse\" unten links und anschließend \"Download\"."
+
+
 msgid "Updated `h5p_libraries` to use 'div' for latest 'H5P.InteractiveVideo'"
 msgstr "`h5p_libraries` upgedated: das aktuellste 'H5P.InteractiveVideo' nutzt nun ein 'div'"

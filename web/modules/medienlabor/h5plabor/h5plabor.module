@@ -2,7 +2,8 @@
 
 use Drupal\Core\Form\FormState;
 use Drupal\Core\Form\FormStateInterface;
-
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 
 /**
  * add info-text on admin/appearance/settings/barrio_h5plabor
@@ -16,35 +17,7 @@ function h5plabor_form_system_theme_settings_alter(&$form, FormState $form_state
   $form['color'] ['palette']['footer']['#suffix'] = $notavailable_text;
 }
 
-/**
- * Implements hook_form_FORM_ID_alter().
- *
- * @param $form
- *   Built form array.
- *
- * @param \Drupal\Core\Form\FormStateInterface $form_state
- *    Form stat object.
- *
- * @param $form_id
- *    Form ID.
- */
-function h5plabor_form_node_h5p_form_alter(&$form, FormState $form_state, $form_id) {
-  $form['title']['#access'] = FALSE;
-  $form['promote']['#access'] = FALSE;
-  $form['status']['#access'] = FALSE;
-  $form['sticky']['#access'] = FALSE;
-  $form['options']['#access'] = FALSE;
-  $form['path']['#access'] = FALSE;
-  #_h5plabor_delete_orphans();
-  $readable_delete_timestamp = _h5plabor_get_readable_orphan_delete_timediff();
-  $delete_notice_text = t('NOTE: H5P-objects will be deleted %stamp after their last usage.', array('%stamp' => $readable_delete_timestamp));
-  $form['field_h5p']['widget'][0]['h5p_content']['clear_content'] ['#access'] = FALSE;
-  $form['field_h5p']['widget'][0]['h5p_content']['frame'] ['#access'] = FALSE;
-  $form['field_h5p']['widget'][0]['h5p_content']['copyright'] ['#access'] = FALSE;
-  $form['field_h5p']['#prefix'] = '<div class="alert alert-primary" role="alert">' . $delete_notice_text . '</div>';
-  //add validation. die fehlt dem H5P-Modul noch. Nach Hochladen-Klick ohne "Benutzen" klicken, ist der Wert leer & führt zu exceptions
-  //NUR FÜR DEN HUB BENÖTIGT $form['#validate'][] = '_h5plabor_form_h5p_validate';
-}
+
 
 /**
  * unused. NUR FÜR DEN HUB BENÖTIGT
@@ -52,7 +25,6 @@ function h5plabor_form_node_h5p_form_alter(&$form, FormState $form_state, $form_
  * @param FormStateInterface $form_state
  */
 function _h5plabor_form_h5p_validate(array &$form, FormStateInterface $form_state) {
-
 
   $big_h5p_error_msg = 'The H5P-element is empty.<br>' . 'You either have to: <ul><li>select a content type to create a new H5P-Element</li><li><b>OR</b> click upload, select your .h5p-file and <em>immediately</em> click "Use"</li></ul>';
   if (!$form_state->getValue("field_h5p")) {
@@ -66,6 +38,24 @@ function _h5plabor_form_h5p_validate(array &$form, FormStateInterface $form_stat
   $fields['field_h5p']->addConstraint('H5PTitleConstraint', []);
   }
   } */
+
+
+/**
+ * Implements hook_ENTITY_TYPE_view() for node entities
+ * show a warning for h5p-files that they will be deleted &
+ * how to download them.
+ * @param array $build
+ * @param EntityInterface $node
+ * @param EntityViewDisplayInterface $display
+ * @param type $view_mode
+ */
+function h5plabor_node_view(array &$build, EntityInterface $node, EntityViewDisplayInterface $display, $view_mode) {
+  if (!empty($build['field_h5p'])) {
+    $download_text = t("Contents on this platform get deleted regularly. <br>To download your H5P-object, click \"Reuse\" bottom left and \"Download\" afterwards.");
+    $download_message = '<div class="alert alert-info" role="alert">' . $download_text . '</div>';
+    $build['field_h5p'][0]['#markup'] = $download_message . '' . $build['field_h5p'][0]['#markup'];
+  }
+}
 
 /**
  * Implements hook_entity_presave().
@@ -108,11 +98,47 @@ function h5plabor_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
  * #use Drupal\Core\Form\FormStateInterface;
  */
 function h5plabor_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if(in_array($form_id, array('node_h5p_form','node_h5p_edit_form')))
+  {
+    _h5plabor_alter_h5p_form($form, $form_state, $form_id);
+  }
+  
      return;
   # var_dump($form["#id"]);
   if ($form_id == 'views_exposed_form' && in_array($form["#id"], array('views-exposed-form-h5p-list-h5p-block', 'views-exposed-form-webauth-user-switch-page'))) { #var_dump($form["#id"]);
     #var_dump($form);
   }
+}
+
+/**
+ * similar to hook hook_form_FORM_ID_alter().
+ * changes the node-add and node-edit form.
+ * 
+ * @param $form
+ *   Built form array.
+ *
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *    Form stat object.
+ *
+ * @param $form_id
+ *    Form ID.
+ */
+function _h5plabor_alter_h5p_form(&$form, FormState $form_state, $form_id) {  #dpm($form);
+  $form['title']['#access'] = FALSE;
+  $form['promote']['#access'] = FALSE;
+  $form['status']['#access'] = FALSE;
+  $form['sticky']['#access'] = FALSE;
+  $form['options']['#access'] = FALSE;
+  $form['path']['#access'] = FALSE;
+  $readable_delete_timestamp = _h5plabor_get_readable_orphan_delete_timediff();
+  $delete_notice_text = t('NOTE: H5P-objects will be deleted %stamp after their last usage.', array('%stamp' => $readable_delete_timestamp));
+
+  $form['field_h5p']['widget'][0]['h5p_content']['clear_content'] ['#access'] = FALSE;
+  $form['field_h5p']['widget'][0]['h5p_content']['frame'] ['#access'] = FALSE;
+  $form['field_h5p']['widget'][0]['h5p_content']['copyright'] ['#access'] = FALSE;
+  $form['field_h5p']['#prefix'] = '<div class="alert alert-primary" role="alert">' . $delete_notice_text . '</div>';
+  //add validation. die fehlt dem H5P-Modul noch. Nach Hochladen-Klick ohne "Benutzen" klicken, ist der Wert leer & führt zu exceptions
+  //NUR FÜR DEN HUB BENÖTIGT $form['#validate'][] = '_h5plabor_form_h5p_validate';
 }
 
 /**
