@@ -40,7 +40,8 @@ then
  exit 0;
 else
  #printf "oh-oh."
-
+ cd ../web/
+ bash ../scripts/update_master.sh
  bash_user=$(whoami)
 #write to stdErr. stdErr will be sent via email.
  (>&2 printf "H5PLabor $bash_user was updated!\n\n")
