@@ -1,0 +1,5 @@
+orphans:
+  delete_timeout: '-180 days'
+_core:
+  default_config_hash: VwCjtVES3SwEm3BTO1bu469FNrZwNFaC3ZXs9xr6pbk
+langcode: de
