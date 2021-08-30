@@ -14,3 +14,13 @@ msgstr "Die Inhalte auf dieser Plattform werden in regelmäßigen Abständen gel
 
 msgid "Updated `h5p_libraries` to use 'div' for latest 'H5P.InteractiveVideo'"
 msgstr "`h5p_libraries` upgedated: das aktuellste 'H5P.InteractiveVideo' nutzt nun ein 'div'"
+
+msgid "Expiration"
+msgstr "Ablauf"
+
+msgid "The date, when expiration is hit and the content will be deleted."
+msgstr "Der Zeitpunkt, zu dem der Inhalt abläuft und gelöscht wird."
+
+msgid ""
+msgstr ""
+

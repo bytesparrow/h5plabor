@@ -270,3 +270,34 @@ function _h5plabor_get_unusedAccounts($last_use_before_timestamp) {
   $result = $query->fetchAllAssoc('uid', PDO::FETCH_ASSOC);
   return $result;
 }
+
+
+
+/**
+ * add a "EXPIRY"-Date in views
+ */
+
+
+/**
+ * Implements hook_views_data().
+ * Sorting funktioniert nicht, da es kein eigenes field sondern ein custom-output ist.
+ */
+function h5plabor_views_data() {
+  $data = [];
+  #$data['views']['expiration_views_field']['group'] = t('Content');
+  $data['node']['expiration_views_field']['group'] = t('Content');
+  $data['node']['expiration_views_field']['join'] = [
+    // #global is a special flag which allows a table to appear all the time.
+    //'#global' => [],
+  ];
+  $data['node']['expiration_views_field'] = [
+    'title' => t('Expiration'),
+    'help' => t('The date, when expiration is hit and the content will be deleted'),
+    'field' => [
+      'click sortable' => FALSE,
+      'id' => 'expiration_views_field',
+    ],
+  ]; 
+  return $data;
+}
+
