@@ -42,3 +42,6 @@ sites/simpletest
 # simpletest
 /.gitattributes
 /example.gitignore
+
+#ignore composer-installed base theme: 
+themes/contrib
