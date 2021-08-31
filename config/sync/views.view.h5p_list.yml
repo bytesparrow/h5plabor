@@ -75,25 +75,18 @@ display:
           row_class: ''
           default_row_class: true
           override: true
-          sticky: false
+          sticky: true
           caption: ''
           summary: ''
           description: ''
           columns:
             title: title
-            created: created
             changed: changed
+            expiration_views_field: expiration_views_field
             edit_node: edit_node
             delete_node: delete_node
           info:
             title:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            created:
               sortable: true
               default_sort_order: asc
               align: ''
@@ -106,6 +99,11 @@ display:
               align: ''
               separator: ''
               empty_column: false
+              responsive: priority-medium
+            expiration_views_field:
+              align: ''
+              separator: ''
+              empty_column: false
               responsive: ''
             edit_node:
               sortable: false
@@ -113,14 +111,14 @@ display:
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-low
             delete_node:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-low
           default: title
           empty_table: false
       row:
