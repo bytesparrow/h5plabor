@@ -45,3 +45,4 @@ sites/simpletest
 
 #ignore composer-installed base theme: 
 themes/contrib
+modules/contrib
