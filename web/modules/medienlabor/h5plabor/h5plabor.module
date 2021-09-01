@@ -181,8 +181,10 @@ function _h5plabor_get_readable_orphan_delete_timediff() {
  * deletes nodes and users that have not been viewed / edited (nodes) or have loggedin (users)
  * within e.g. the last 180 days (depends on h5plabor.settings.orphans.delete_timeout)
  * @throws Exception if settings seem unrealistic
+ * @return String $delete_notice
  */
 function _h5plabor_delete_orphans() {
+
   $timediff = \Drupal::config('h5plabor.settings')->get('orphans.delete_timeout');
   $content_valid_until = strtotime($timediff); //ok, passt
   if ($content_valid_until > strtotime("-1 days")) {
@@ -195,7 +197,6 @@ function _h5plabor_delete_orphans() {
    */
   //dummy: 1 tage
   //$content_valid_until = strtotime("-1 days");
-
   //dpm("valid untiL: ".$content_valid_until);
   $orphaned_content = _h5plabor_get_unusedContentBefore($content_valid_until);
   $orphaned_users = _h5plabor_get_unusedAccounts($content_valid_until);
@@ -223,8 +224,29 @@ function _h5plabor_delete_orphans() {
     }
   }
   if ($orphaned_content || $orphaned_users) {
-    $messenger = \Drupal::messenger();
-    $messenger->addMessage(t("Deleted %count_users users and %count_nodes h5p-objects.", array('%count_users' => $user_delete_counter, '%count_nodes' => $node_delete_counter)), $messenger::TYPE_STATUS);
+    return t("Deleted %count_users users and %count_nodes h5p-objects.", array('%count_users' => $user_delete_counter, '%count_nodes' => $node_delete_counter));
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function h5plabor_cron() {
+
+  // Default to an hourly interval. Of course, cron has to be running at least
+  // hourly for this to work.
+  $interval = \Drupal::config('h5plabor.settings')->get('cron.interval');
+  $interval = !empty($interval) ? $interval : 3600;
+  // We usually don't want to act every time cron runs (which could be every
+  // minute) so keep a time for the next run in the site state.
+  $next_execution = \Drupal::state()->get('h5plabor_cron.next_execution', 0);
+  if (\Drupal::time()->getRequestTime() >= $next_execution) {
+
+    $deleted_notice = _h5plabor_delete_orphans();
+    if ($deleted_notice) {
+      \Drupal::logger('h5plabor_cron')->notice($deleted_notice);
+    }
+    \Drupal::state()->set('h5plabor_cron.next_execution', \Drupal::time()->getRequestTime() + $interval);
   }
 }
 
