@@ -3,4 +3,4 @@ h5p_remove_metadata-assets:
      assets/h5p_remove_metadata.js: {}
   dependencies:  
     - core/drupal
-    - h5p
+    - core/jquery
