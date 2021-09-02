@@ -1,7 +1,6 @@
 <?php
-# 
 
-require('/var/www/vhosts/div.onlinekurslabor.de/h5plabor.div.onlinekurslabor.de/web/web/vendor/autoload.php');
+require(dirname(dirname(dirname(dirname(__DIR__)))).'/vendor/autoload.php');
 use Symfony\Component\HttpFoundation\RedirectResponse;
  #var_dump($_COOKIE);
 foreach(array_keys($_COOKIE) as $cookietitle)
