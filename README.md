@@ -47,6 +47,7 @@ Goto: admin/config/user-interface/shortcut/manage/default/customize -> delete al
 
 Copy the file default.site_environment.php:
 - cp sites/default/default.site_environment.php  sites/default/site_environment.php 
+
 And adjust its content
 
 
@@ -75,7 +76,7 @@ Create the trusted_host_patterns-setting as proposed in admin/reports/status
 revert the permissionchange of folder sites/default
 
 - drush cim 
--- drush locale-check && drush locale-update && drush cr
+- drush locale-check && drush locale-update && drush cr
 
 Goto: admin/appearance/settings/barrio_h5plabor
 Click "save"
