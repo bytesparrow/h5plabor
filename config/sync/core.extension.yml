@@ -25,6 +25,7 @@ module:
   file: 0
   filter: 0
   h5p: 0
+  h5p_remove_metadata: 0
   h5peditor: 0
   h5plabor: 0
   help: 0

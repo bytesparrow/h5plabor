@@ -1,0 +1,12 @@
+name: h5p_remove_metadata
+type: module
+description: 'hides the metadata-field in h5p'
+package: medienlabor
+core: 8.x
+core_version_requirement: ^8 || ^9
+version: '8.x-1.0'
+dependencies:
+  - drupal:user
+  - drupal:node
+  - h5p
+  
