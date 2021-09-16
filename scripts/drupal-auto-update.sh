@@ -44,8 +44,9 @@ else
  bash ../scripts/update_master.sh
  bash_user=$(whoami)
 #write to stdErr. stdErr will be sent via email.
- (>&2 printf "H5PLabor $bash_user was updated!\n\n")
- (>&2 printf "Pfad: $PWD \nNotice: $UPDATE_MESSAGE\n")
+#use pattern: You should never pass a variable to the FORMAT string as it may lead to errors and security vulnerabilities.
+ (>&2 printf "H5PLabor %s was updated!\n\n" "$bash_user")
+ (>&2 printf "Pfad: %s \nNotice: %s\n" "$PWD" "$UPDATE_MESSAGE")
  
  exit 1;
 fi
