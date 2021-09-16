@@ -1,6 +1,5 @@
 # H5PLabor
 A drupal project to let users create H5P-objects
-
 Project is to be used @Medienlabor @Universität Augsburg, Bavaria, Germany.
 
 Provided in the hope it is usefull without any warranty.
@@ -44,9 +43,13 @@ Goto: admin/config/user-interface/shortcut/manage/default/customize -> delete al
 - drush cset language.entity.de uuid f1505574-d36f-4d8c-a8fc-88317c4ff411
 - cp ../config/files/* ../web/sites/default/files/
 
-Copy the file  
-sites/default/default.site_environment.php TO sites/default/site_environment.php 
- 
+(temporarily) change the permission of folder sites/default so that you can write in it
+
+Copy the file default.site_environment.php:
+- cp sites/default/default.site_environment.php  sites/default/site_environment.php 
+
+And adjust its content
+
 
 Edit: sites/default/settings.php
 
@@ -64,20 +67,22 @@ switch($site_environment){
 
 }
 ```
-
 Create the webauth-secret keys (see FILE: webauth-module/README.txt) and store the keys in settings.php
 
 
+Create the trusted_host_patterns-setting as proposed in admin/reports/status
+
+
+revert the permissionchange of folder sites/default
 
 - drush cim 
 - drush locale-check && drush locale-update && drush cr
 
-
-Goto: admin/appearance/settings/barrio_h5plabor - 
+Goto: admin/appearance/settings/barrio_h5plabor
 Click "save"
 
 
-Goto: /node/add/page - 
+Goto: /node/add/page
 Create: "Über" Seite ("About" page)
 
 
@@ -86,7 +91,28 @@ Import blocks:
 (prompt answer is always "1")
 
 
+Goto: admin/content/h5p
+Install desired libraries from h5p.org
 
-Goto: admin/content/h5p - Install desired libraries from h5p.org
+Change InteractiveVideo to "div" instead of "iframe":
+- drush php-eval "_h5plabor_set_interactiveVideoToDivEmbed();"
+
+Do another reimport
+- drush cim
+
+
+Goto: admin/appearance/settings/barrio_h5plabor
+Click "save"
+
+Create Cronjob (for example every hour):
+
+cd ~/web/web && php  ~/.composer/vendor/bin/drush.php cron
 
 **Your Site should be done.**
+
+Optional (for dev)
+
+Create Cronjob to automatically keep Drupal up to date (and have yourself informed if an update was made):
+
+bash web/scripts/drupal-auto-update.sh 2>&1 > /dev/null | bash web/scripts/mail_if_output.sh your@personalema.il
+(for example every 5 hours: */5 * * * *)
