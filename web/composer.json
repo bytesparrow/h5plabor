@@ -24,7 +24,8 @@
         "drupal/core-recommended": "^8.8",
         "drupal/core-vendor-hardening": "^8.8",
         "drupal/ctools": "^3.7",
-        "drupal/h5p": "^1.0@RC",
+        "drupal/devel": "^4.1",
+        "drupal/h5p": "^2.0@alpha",
         "drupal/structure_sync": "^2.0"
     },
     "conflict": {
