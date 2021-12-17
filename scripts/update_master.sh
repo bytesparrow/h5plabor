@@ -9,7 +9,7 @@ drush cache-rebuild
 drush updatedb --yes
 
 #h5p-fullscreen-fix when embedded as "div"
-sed -i "s/var first, eventName = (H5P.fullScreenBrowserPrefix === 'ms' ? 'MSFullscreenChange' : H5P.fullScreenBrowserPrefix + 'fullscreenchange');/var first, eventName = (H5P.fullScreenBrowserPrefix === 'ms' ? 'MSFullscreenChange' : (H5P.fullScreenBrowserPrefix === 'moz'?'fullscreenchange' : H5P.fullScreenBrowserPrefix + 'fullscreenchange'));/" /modules/contrib/h5p/vendor/h5p/h5p-core/js/h5p.js
+sed -i "s/var first, eventName = (H5P.fullScreenBrowserPrefix === 'ms' ? 'MSFullscreenChange' : H5P.fullScreenBrowserPrefix + 'fullscreenchange');/var first, eventName = (H5P.fullScreenBrowserPrefix === 'ms' ? 'MSFullscreenChange' : (H5P.fullScreenBrowserPrefix === 'moz'?'fullscreenchange' : H5P.fullScreenBrowserPrefix + 'fullscreenchange'));/" modules/contrib/h5p/vendor/h5p/h5p-core/js/h5p.js
 
 echo ">>>>>>>>>>>>> please check, if h5p-interactive video fullscreen-toggle works."
 drush cache-rebuild
