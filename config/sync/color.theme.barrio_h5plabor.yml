@@ -10,10 +10,10 @@ palette:
   titleslogan: '#ffffff'
   text: '#3b3b3b'
   link: '#337AB7'
-logo: 'public://color/barrio_h5plabor-b4de546e/logo.svg'
+logo: 'public://color/barrio_h5plabor-0fec4829/logo.svg'
 stylesheets:
-  - 'public://color/barrio_h5plabor-b4de546e/colors.css'
+  - 'public://color/barrio_h5plabor-0fec4829/colors.css'
 files:
-  - 'public://color/barrio_h5plabor-b4de546e/logo.svg'
-  - 'public://color/barrio_h5plabor-b4de546e/colors.css'
+  - 'public://color/barrio_h5plabor-0fec4829/logo.svg'
+  - 'public://color/barrio_h5plabor-0fec4829/colors.css'
 langcode: de
