@@ -67,7 +67,7 @@ class WebauthController extends ControllerBase {
 
     $session->set('webauth_uname', $decrypted_uname);
     $this->messenger()->addMessage($this->t('Hello %s, you are logged in now', array('%s' => $decrypted_uname)));
-    return new RedirectResponse(\Drupal::url('<front>', [], ['absolute' => TRUE]));
+    return new RedirectResponse(\Drupal::service('url_generator')->generateFromRoute('<front>', [], ['absolute' => TRUE]));
     /*
       return [
       '#markup' => 'session_id:' . session_id() . '<br>' .
@@ -90,7 +90,7 @@ class WebauthController extends ControllerBase {
     $session = \Drupal::request()->getSession();
     $session->set('webauth_switch_uname', $switch_uname);
     $this->messenger()->addMessage($this->t('You are switching to %s', array('%s' => $switch_uname)));
-    return new RedirectResponse(\Drupal::url('<front>', [], ['absolute' => TRUE]));
+    return new RedirectResponse(\Drupal::service('url_generator')->generateFromRoute('<front>', [], ['absolute' => TRUE]));
   }
 
   public function test() {
