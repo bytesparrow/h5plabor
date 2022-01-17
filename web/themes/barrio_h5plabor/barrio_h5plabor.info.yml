@@ -2,7 +2,7 @@ name: H5PLabor Barrio Subtheme
 type: theme
 description: 'H5PLabor Theme.'
 core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9|| ^10
 base theme: bootstrap_barrio
 
 libraries:

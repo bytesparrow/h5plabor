@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
+langcode: de
 uuid: b61929b4-12e6-4382-86a8-624959b78517
 name: H5PLabor
 mail: noreply@onlinekurslabor.de
@@ -8,8 +11,5 @@ page:
   front: /home
 admin_compact_mode: false
 weight_select_max: 100
-langcode: de
 default_langcode: de
-_core:
-  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
 mail_notification: ''

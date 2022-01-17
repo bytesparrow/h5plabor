@@ -6,16 +6,16 @@ dependencies:
     - page_manager.page.frontpage
 id: frontpage-http_status_code-0
 label: HTTP-Statuscode
+weight: 0
 variant: http_status_code
 variant_settings:
   id: http_status_code
-  uuid: 5f8c935e-6ce5-4ad7-9acd-885c12602a4d
   label: null
   weight: 0
+  uuid: 5f8c935e-6ce5-4ad7-9acd-885c12602a4d
   status_code: 302
   redirect_location: /
 page: frontpage
-weight: 0
 selection_criteria: {  }
 selection_logic: and
 static_context: {  }
