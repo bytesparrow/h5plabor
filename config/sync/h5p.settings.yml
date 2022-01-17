@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: tLHf2aR3MQ_-HjO09bi1YN28E4XbyaAkTRfoxOnE2IY
+langcode: de
 h5p_frame: 1
 h5p_export: 4
 h5p_embed: 0
@@ -12,9 +15,6 @@ h5p_save_content_frequency: 30
 h5p_enable_lrs_content_types: 0
 h5p_hub_is_enabled: 0
 h5p_send_usage_statistics: 0
-_core:
-  default_config_hash: tLHf2aR3MQ_-HjO09bi1YN28E4XbyaAkTRfoxOnE2IY
 h5p_site_uuid: f91ce96b-9eab-4b6f-af6b-0a19a025909c
-langcode: de
 h5p_site_type: internet
 h5p_first_runnable_saved: 1

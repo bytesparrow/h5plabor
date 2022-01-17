@@ -1,41 +1,21 @@
-bootstrap_barrio_library: production
-bootstrap_barrio_sidebar_position: both
-bootstrap_barrio_content_offset: 0
-bootstrap_barrio_sidebar_first_width: 4
-bootstrap_barrio_sidebar_first_offset: 0
-bootstrap_barrio_sidebar_second_width: 3
-bootstrap_barrio_sidebar_second_offset: 0
-bootstrap_barrio_fluid_container: 0
-bootstrap_barrio_button: 1
-bootstrap_barrio_button_size: ''
-bootstrap_barrio_button_outline: 0
-bootstrap_barrio_navbar_toggle: navbar-toggleable-lg
-bootstrap_barrio_navbar_container: '0'
-bootstrap_barrio_navbar_top_position: ''
-bootstrap_barrio_navbar_top_color: navbar-dark
-bootstrap_barrio_navbar_top_background: ''
-bootstrap_barrio_navbar_position: ''
-bootstrap_barrio_navbar_color: ''
-bootstrap_barrio_navbar_background: ''
-bootstrap_barrio_messages_widget: alerts
-bootstrap_barrio_system_messages: messages_white
-bootstrap_barrio_table_hover: 1
-bootstrap_barrio_table_style: table-striped
 _core:
   default_config_hash: w2HQYJGLG4-Mmk19eIIKgoXCiXEJm-NVSNhhv-VdpUI
+langcode: de
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: 'public://favicon.ico'
+  use_default: false
 features:
-  node_user_picture: false
   comment_user_picture: false
   comment_user_verification: false
   favicon: true
+  node_user_picture: false
 logo:
-  use_default: false
   path: 'public://H5PLabor_header-icon.png'
-favicon:
   use_default: false
-  path: 'public://favicon.ico'
-  mimetype: image/vnd.microsoft.icon
+bootstrap_barrio_library: production
 bootstrap_barrio_source: bootstrap_barrio/bootstrap
+bootstrap_barrio_fluid_container: 0
 bootstrap_barrio_region_clean_top_header: 0
 bootstrap_barrio_region_class_top_header: row
 bootstrap_barrio_region_clean_top_header_form: 0
@@ -80,14 +60,30 @@ bootstrap_barrio_region_clean_footer_fourth: 0
 bootstrap_barrio_region_class_footer_fourth: row
 bootstrap_barrio_region_clean_footer_fifth: 0
 bootstrap_barrio_region_class_footer_fifth: row
+bootstrap_barrio_sidebar_position: both
+bootstrap_barrio_content_offset: 0
 bootstrap_barrio_sidebar_collapse: 0
-bootstrap_barrio_image_fluid: false
+bootstrap_barrio_sidebar_first_width: 4
+bootstrap_barrio_sidebar_first_offset: 0
+bootstrap_barrio_sidebar_second_width: 3
+bootstrap_barrio_sidebar_second_offset: 0
+bootstrap_barrio_button: 1
+bootstrap_barrio_button_size: ''
+bootstrap_barrio_button_outline: 0
+bootstrap_barrio_navbar_container: '0'
+bootstrap_barrio_navbar_toggle: navbar-toggleable-lg
 bootstrap_barrio_navbar_top_navbar: 0
 bootstrap_barrio_navbar_top_class: ''
 bootstrap_barrio_navbar_class: navbar-h5plabor
+bootstrap_barrio_navbar_top_position: ''
+bootstrap_barrio_navbar_top_color: navbar-dark
+bootstrap_barrio_navbar_top_background: ''
+bootstrap_barrio_navbar_position: ''
+bootstrap_barrio_navbar_color: ''
+bootstrap_barrio_navbar_background: ''
 bootstrap_barrio_navbar_flyout: false
 bootstrap_barrio_navbar_slide: false
-bootstrap_barrio_tabs_style: ''
+bootstrap_barrio_messages_widget: alerts
 bootstrap_barrio_navbar_top_affix: 0
 bootstrap_barrio_navbar_affix: 0
 bootstrap_barrio_sidebar_first_affix: 0
@@ -96,5 +92,11 @@ bootstrap_barrio_scroll_spy: ''
 bootstrap_barrio_google_fonts: ''
 bootstrap_barrio_bootstrap_icons: 1
 bootstrap_barrio_icons: ''
+bootstrap_barrio_system_messages: messages_white
+bootstrap_barrio_table_style: table-striped
+bootstrap_barrio_table_hover: 1
 bootstrap_barrio_table_head: ''
-langcode: de
+bootstrap_barrio_image_fluid: false
+bootstrap_barrio_tabs_style: ''
+bootstrap_barrio_hide_node_label: 0
+bootstrap_barrio_navbar_offcanvas: ''

@@ -17,8 +17,8 @@ plugin: 'block_content:f99406ac-57a0-47c4-9443-ef604a102107'
 settings:
   id: 'block_content:f99406ac-57a0-47c4-9443-ef604a102107'
   label: '<hr>'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full

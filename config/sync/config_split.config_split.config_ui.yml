@@ -5,6 +5,7 @@ dependencies: {  }
 id: config_ui
 label: config-ui
 description: 'UI-Modules for views, pagemanager etc'
+weight: 0
 folder: ../config/config_ui
 module:
   field_ui: 0
@@ -16,4 +17,3 @@ blacklist: {  }
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
-weight: 0

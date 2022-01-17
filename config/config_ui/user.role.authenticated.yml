@@ -1,7 +1,17 @@
 uuid: e5cf05bb-4fa9-462b-b3a6-f7d5f8885d82
 langcode: de
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.basic_html
+    - node.type.h5p
+  module:
+    - filter
+    - h5p
+    - h5peditor
+    - node
+    - shortcut
+    - system
 _core:
   default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
 id: authenticated
