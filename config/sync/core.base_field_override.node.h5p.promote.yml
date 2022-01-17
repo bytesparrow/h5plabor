@@ -1,0 +1,22 @@
+uuid: ec6ec63c-34c6-41f4-a865-b5e4f0525031
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.h5p
+id: node.h5p.promote
+field_name: promote
+entity_type: node
+bundle: h5p
+label: 'Auf der Startseite anzeigen'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

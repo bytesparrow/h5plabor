@@ -24,43 +24,43 @@ tips:
     plugin: text
     label: Übersetzungssprache
     weight: 2
-    body: 'Die Sprache, die übersetzt werden soll, auswählen.'
     selector: '#edit-langcode'
+    body: 'Die Sprache, die übersetzt werden soll, auswählen.'
   locale-search:
     id: locale-search
     plugin: text
     label: Suche
     weight: 3
-    body: 'Eingabe eines bestimmten Wortes oder Satzes, das übersetzt werden soll. Es kann auch nur ein Teil eines Wortes angegeben werden.'
     selector: '#edit-string'
+    body: 'Eingabe eines bestimmten Wortes oder Satzes, das übersetzt werden soll. Es kann auch nur ein Teil eines Wortes angegeben werden.'
   locale-filter:
     id: locale-filter
     plugin: text
     label: 'Die Suche eingrenzen'
     weight: 4
-    body: 'Es kann nach nicht übersetzten Zeichenketten gesucht werden, um etwas zu übersetzen, was bisher noch nicht übersetzt worden ist. Falls eine bereits bestehende Übersetzung abgeändert werden soll, dann sollte besser nur nach bereits übersetzten Zeichenketten gesucht werden.'
     selector: '#edit-translation'
+    body: 'Es kann nach nicht übersetzten Zeichenketten gesucht werden, um etwas zu übersetzen, was bisher noch nicht übersetzt worden ist. Falls eine bereits bestehende Übersetzung abgeändert werden soll, dann sollte besser nur nach bereits übersetzten Zeichenketten gesucht werden.'
   locale-submit:
     id: locale-submit
     plugin: text
     label: 'Suchkriterien anwenden'
     weight: 5
-    body: 'Um die Suchkriterien anzuwenden, auf den <em>Filter</em>-Button klicken.'
     selector: '#edit-submit'
+    body: 'Um die Suchkriterien anzuwenden, auf den <em>Filter</em>-Button klicken.'
   locale-translate:
     id: locale-translate
     plugin: text
     label: Übersetzen
     weight: 6
-    body: 'Die eigene Übersetzung kann in die Textfelder in der rechten Spalte eingegeben werden. Es sollte versucht werden herauszufinden in welchem Kontext der Text verwendet werden soll, um ihn sachgemäß zu übersetzen.'
     selector: .js-form-type-textarea
+    body: 'Die eigene Übersetzung kann in die Textfelder in der rechten Spalte eingegeben werden. Es sollte versucht werden herauszufinden in welchem Kontext der Text verwendet werden soll, um ihn sachgemäß zu übersetzen.'
   locale-validate:
     id: locale-validate
     plugin: text
     label: 'Die Übersetzungen prüfen und speichern'
     weight: 7
-    body: 'Sobald die Übersetzungen abgeschlossen sind, werden diese über einen Klick auf den Button </em>Übersetzungen speichern</em> abgespeichert. Die Übersetzungen müssen immer abgespeichert werden, bevor Änderungen an der Seite vorgenommen werden oder eine neue Suche durchgeführt wird. Andernfalls gehen die vorgenommenen Änderungen verloren.'
     selector: '#edit-submit--2'
+    body: 'Sobald die Übersetzungen abgeschlossen sind, werden diese über einen Klick auf den Button </em>Übersetzungen speichern</em> abgespeichert. Die Übersetzungen müssen immer abgespeichert werden, bevor Änderungen an der Seite vorgenommen werden oder eine neue Suche durchgeführt wird. Andernfalls gehen die vorgenommenen Änderungen verloren.'
   locale-continue:
     id: locale-continue
     plugin: text
