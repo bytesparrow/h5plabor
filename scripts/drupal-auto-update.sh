@@ -22,16 +22,14 @@ cd "$(dirname "$0")"
 
 cd ../web/
 #drush refresh cache, send output to null
-drush rf   >  /dev/null 2>&1  ||  ((>&2 printf "DRUSH COMMAND NOT FOUND\n\n") && exit 1);# pm-refresh OR warning if drush not found
+drush cache-rebuild   >  /dev/null 2>&1  ||  ((>&2 printf "DRUSH COMMAND NOT FOUND\n\n") && exit 1);# pm-refresh OR warning if drush not found
 
 #composer-StdErr geht in die message-variable
 #UPDATE_MESSAGE=`COMPOSER_MEMORY_LIMIT=-1 composer update  2> /dev/null`
 UPDATE_MESSAGE=$(COMPOSER_MEMORY_LIMIT=-1 composer update 2>&1)
 
 #changed-variable: hat sich was geaenderT?
-CHANGED_DRUP=`echo $UPDATE_MESSAGE |  grep "Updating drupal"`
-
- 
+CHANGED_DRUP=`echo $UPDATE_MESSAGE |  grep "Upgrading drupal"`
 
 
 if [ "$CHANGED_DRUP" = ""  ]   ;
@@ -41,12 +39,12 @@ then
 else
  #printf "oh-oh."
  cd ../web/
- bash ../scripts/update_master.sh
+ UPDATE_MASTER_MESSAGE=$(bash ../scripts/update_master.sh 2>&1)
  bash_user=$(whoami)
 #write to stdErr. stdErr will be sent via email.
 #use pattern: You should never pass a variable to the FORMAT string as it may lead to errors and security vulnerabilities.
  (>&2 printf "H5PLabor %s was updated!\n\n" "$bash_user")
  (>&2 printf "Pfad: %s \nNotice: %s\n" "$PWD" "$UPDATE_MESSAGE")
- 
+ (>&2 printf "\nUPDATE_MASTER: %s \n" "$UPDATE_MASTER_MESSAGE")
  exit 1;
 fi
