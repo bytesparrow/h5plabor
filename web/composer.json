@@ -18,7 +18,8 @@
         "composer/installers": "^1.9",
         "drupal/admin_toolbar": "^3.0",
         "drupal/bootstrap_barrio": "^5.5",
-        "drupal/config_filter": "^2.2",
+        "drupal/config_filter": "^1.10",
+        "drupal/config_split": "^1.9",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-project-message": "^9",
         "drupal/core-recommended": "^9",
@@ -26,6 +27,7 @@
         "drupal/ctools": "^3.7",
         "drupal/devel": "^4.1",
         "drupal/h5p": "^2.0@alpha",
+        "drupal/panels": "^4.7",
         "drupal/structure_sync": "^2.0",
         "drush/drush": "^10"
     },

@@ -1,0 +1,135 @@
+<?php
+
+//see var NEXT_DELETE_TIMESTAMP from module h5plabor  
+
+/**
+ * add info-text on admin/appearance/settings/barrio_h5plabor
+ * @param type $form
+ * @param FormState $form_state
+ * @param type $form_id
+ */
+function h5plabor_form_system_theme_settings_alter(&$form, FormState $form_state, $form_id) {
+  $notavailable_text = '<em>Value not for &lt;frontpage&gt;. This one is transparent via theme-css</em>';
+  $form['color'] ['palette']['bg']['#suffix'] = $notavailable_text;
+  $form['color'] ['palette']['footer']['#suffix'] = $notavailable_text;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * @param $form
+ *   Built form array.
+ *
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *    Form stat object.
+ *
+ * @param $form_id
+ *    Form ID.
+ */
+function h5plabor_form_node_h5p_form_alter(&$form, FormState $form_state, $form_id) {
+  $form['title']['#access'] = FALSE;
+  $form['promote']['#access'] = FALSE;
+  $form['status']['#access'] = FALSE;
+  $form['sticky']['#access'] = FALSE;
+  $form['options']['#access'] = FALSE;
+  $form['path']['#access'] = FALSE;
+
+  $delete_notice_text = t('NOTE: on %stamp all content on this platform will be deleted.', array('%stamp' => date('d.m.Y', NEXT_DELETE_TIMESTAMP)));
+  $form['field_h5p']['widget'][0]['h5p_content']['clear_content'] ['#access'] = FALSE;
+  $form['field_h5p']['widget'][0]['h5p_content']['frame'] ['#access'] = FALSE;
+  $form['field_h5p']['widget'][0]['h5p_content']['copyright'] ['#access'] = FALSE;
+  $form['field_h5p']['#prefix'] = '<div class="alert alert-primary" role="alert">' . $delete_notice_text . '</div>';
+  //add validation. die fehlt dem H5P-Modul noch. Nach Hochladen-Klick ohne "Benutzen" klicken, ist der Wert leer & führt zu exceptions
+  //NUR FÜR DEN HUB BENÖTIGT $form['#validate'][] = '_h5plabor_form_h5p_validate';
+}
+
+/**
+ * unused. NUR FÜR DEN HUB BENÖTIGT
+ * @param array $form
+ * @param FormStateInterface $form_state
+ */
+function _h5plabor_form_h5p_validate(array &$form, FormStateInterface $form_state) {
+
+
+  $big_h5p_error_msg = 'The H5P-element is empty.<br>' . 'You either have to: <ul><li>select a content type to create a new H5P-Element</li><li><b>OR</b> click upload, select your .h5p-file and <em>immediately</em> click "Use"</li></ul>';
+  if (!$form_state->getValue("field_h5p")) {
+    $form_state->setErrorByName('h5p', t($big_h5p_error_msg));
+  }
+}
+
+/**
+  function h5plabor_entity_bundle_field_info_alter(&$fields, \Drupal\Core\Entity\EntityTypeInterface $entity_type, $bundle) {
+  if (isset($fields['field_h5p'])) {
+  $fields['field_h5p']->addConstraint('H5PTitleConstraint', []);
+  }
+  } */
+
+/**
+ * Implements hook_entity_presave().
+ */
+function h5plabor_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  switch ($entity->bundle()) {
+
+    case 'h5p':
+      // Setting the title with the value of h5ptitle.
+      $h5p_content = \Drupal::request()->request->get('field_h5p')[0]['h5p_content']['parameters'];
+      try {
+        $h5p_content_decoded = GuzzleHttp\json_decode($h5p_content);
+        $h5ptitle = $h5p_content_decoded->metadata->title;
+      }
+      catch (Exception $ex) {
+        //Alternative: Upload von Files
+        if (is_array($_FILES)) {
+          $candidates = $_FILES['files']['name'];
+          
+          foreach ($candidates as $upload_field_name => $upload_filename) {
+            if (strstr($upload_field_name, 'field_h5p')) {
+              //ersetze "-" (außer bei \d-) und file-ending durch " "
+              $regex = ['/(?<!\d)(-)+/i', '/\.h5p/i'];
+              $h5ptitle = ucfirst(trim(preg_replace($regex, ' ', $upload_filename)));
+              //dpm($h5ptitle);
+              break;
+            }
+          }
+        }
+      }
+      if (!$h5ptitle) {
+        $h5ptitle = '-- unserialization failed --';
+      }
+      $entity->setTitle($h5ptitle);
+      break;
+  }
+}
+
+/**
+ * #use Drupal\Core\Form\FormStateInterface;
+ */
+function h5plabor_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  #   return;
+  # var_dump($form["#id"]);
+  if ($form_id == 'views_exposed_form' && in_array($form["#id"], array('views-exposed-form-h5p-list-h5p-block', 'views-exposed-form-webauth-user-switch-page'))) { #var_dump($form["#id"]);
+    #var_dump($form);
+  }
+}
+
+/**
+ * Statt "My Account" Benutzernamen anzeigen per Klasse PersonalizedPageLink;
+ * implements hook_menu_links_discovered_alter
+ * @param array $links
+ */
+function h5plabor_menu_links_discovered_alter(&$links) {
+  $links['user.page']['class'] = 'Drupal\h5plabor\Plugin\Menu\PersonalizedPageLink';
+}
+
+
+
+/**
+ * Helperfunktion für Updates. Setzt den embed-typ für InteractiveVideo auf DIV statt IFRAME,
+ * weil sonst alle anderen Features (AnnVid, Sprungmarken etc) nicht gehen
+ */
+function _h5plabor_set_interactiveVideoToDivEmbed() {
+  $connection = \Drupal\Core\Database\Database::getConnection();
+  $connection->query("update  `h5p_libraries` set `embed_types` = 'div' WHERE `machine_name` LIKE :my_machine_name order by `library_id` desc limit 1", array(':my_machine_name' => 'H5P.InteractiveVideo'));
+
+  \Drupal::messenger()->addMessage("Updated `h5p_libraries` to use 'div' for latest 'H5P.InteractiveVideo'");
+}
