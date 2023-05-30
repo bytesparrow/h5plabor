@@ -1,0 +1,11 @@
+name: delete_everything
+type: module
+description: 'deletes all content and users (except uid/nid 1) from the plattform'
+package: medienlabor
+core: 8.x
+core_version_requirement: ^8 || ^9
+version: '8.x-1.0'
+dependencies:
+  - drupal:user
+  - drupal:node
+  - h5plabor
