@@ -29,6 +29,7 @@
         "drupal/jquery_ui": "^1.6",
         "drupal/jquery_ui_draggable": "^2.0",
         "drupal/jquery_ui_droppable": "^2.0",
+        "drupal/page_manager": "^4.0@RC",
         "drupal/structure_sync": "^2.0",
         "drush/drush": "^10"
     },
