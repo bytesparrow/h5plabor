@@ -6,12 +6,11 @@ id: webauth_content
 label: webauth_content
 description: 'contains the configuration [views etc] for the webauth module'
 weight: 0
+storage: folder
 folder: modules/medienlabor/webauth/config/install
 module:
   webauth: 0
 theme: {  }
-blacklist:
+complete_list:
   - views.view.webauth_user_switch
-graylist: {  }
-graylist_dependents: true
-graylist_skip_equal: true
+partial_list: {  }
