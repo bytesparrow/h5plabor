@@ -1,13 +1,7 @@
 uuid: bc870fb4-920d-4652-8153-08f9df517a26
 langcode: de
 status: true
-dependencies:
-  module:
-    - menu_ui
-third_party_settings:
-  menu_ui:
-    available_menus: {  }
-    parent: ''
+dependencies: {  }
 name: H5P
 type: h5p
 description: 'Der passende Content-Type um H5Ps zu erstellen'

@@ -9,7 +9,10 @@ weight: 0
 stackable: false
 storage: folder
 folder: ../config/general
-module: {  }
+module:
+  h5p: 0
+  h5p_remove_metadata: 0
+  h5peditor: 0
 theme: {  }
 complete_list:
   - core.base_field_override.node.h5p.promote
@@ -21,6 +24,8 @@ complete_list:
   - core.entity_view_display.node.h5p.teaser
   - field.field.block_content.reference_block.field_ref
   - field.field.node.h5p.field_h5p
+  - field.storage.node.field_h5p
+  - h5p.settings
   - language.content_settings.node.h5p
   - node.type.h5p
   - page_manager.page_variant.home-panels_variant-0
