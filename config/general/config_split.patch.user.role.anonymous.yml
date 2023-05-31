@@ -1,0 +1,8 @@
+adding:
+  dependencies:
+    module:
+      - node_view_permissions
+  permissions:
+    - 'view any page content'
+    - 'view own page content'
+removing: {  }

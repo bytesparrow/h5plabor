@@ -10,6 +10,7 @@ dependencies:
     - h5p
     - h5peditor
     - node
+    - node_view_permissions
     - shortcut
     - system
 _core:
@@ -31,4 +32,7 @@ permissions:
   - 'edit own h5p content'
   - 'revert h5p revisions'
   - 'use text format basic_html'
+  - 'view any page content'
   - 'view h5p revisions'
+  - 'view own h5p content'
+  - 'view own page content'

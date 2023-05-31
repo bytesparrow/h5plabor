@@ -13,6 +13,7 @@ module:
   h5p: 0
   h5p_remove_metadata: 0
   h5peditor: 0
+  node_view_permissions: 0
 theme: {  }
 complete_list:
   - core.base_field_override.node.h5p.promote
