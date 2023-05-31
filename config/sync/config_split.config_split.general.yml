@@ -1,33 +1,30 @@
-uuid: d919543e-f826-4e28-a7b9-a01720f88137
+uuid: eb978413-6d32-4d02-bb03-fe6dc3326df9
 langcode: de
-status: false
+status: true
 dependencies: {  }
-id: config_ui
-label: config-ui
-description: 'UI-Modules for views, pagemanager etc'
+id: general
+label: general
+description: 'general features of h5plabor'
 weight: 0
 stackable: false
 storage: folder
-folder: ../config/config_ui
-module:
-  field_ui: 0
-  menu_ui: 0
-  page_manager_ui: 0
-  views_ui: 0
+folder: ../config/general
+module: {  }
 theme: {  }
 complete_list:
-  - field.field.block_content.reference_block.field_ref
-  - field_ui.settings
-  - menu_ui.settings
-  - tour.tour.views-ui
-partial_list:
   - core.base_field_override.node.h5p.promote
   - core.entity_form_display.block_content.reference_block.default
   - core.entity_form_display.node.h5p.default
   - core.entity_view_display.block_content.reference_block.default
   - core.entity_view_display.block_content.reference_block.vollstaendig_ohne_titles
+  - core.entity_view_display.node.h5p.default
+  - core.entity_view_display.node.h5p.teaser
   - field.field.block_content.reference_block.field_ref
   - field.field.node.h5p.field_h5p
   - language.content_settings.node.h5p
-  - menu_ui.settings
   - node.type.h5p
+  - page_manager.page_variant.home-panels_variant-0
+  - page_manager.page_variant.home-panels_variant-1
+  - user.role.authenticated
+  - views.view.h5p_list
+partial_list: {  }

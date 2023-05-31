@@ -1,0 +1,23 @@
+uuid: 1ede0507-bcb8-465c-9024-4f8298d9133e
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_h5p
+    - node.type.h5p
+  module:
+    - h5p
+id: node.h5p.field_h5p
+field_name: field_h5p
+entity_type: node
+bundle: h5p
+label: H5P
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    h5p_content_id: null
+default_value_callback: ''
+settings: {  }
+field_type: h5p
