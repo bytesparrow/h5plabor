@@ -49,7 +49,6 @@ module:
   path: 0
   path_alias: 0
   quickedit: 0
-  rdf: 0
   search: 0
   shortcut: 0
   structure_sync: 0
