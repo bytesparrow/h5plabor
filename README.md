@@ -11,7 +11,7 @@ some steps are required for a full installation
 ### Prerequisits
 
 
-Have a webspace with PHP >= 7.4 and a database
+Have a webspace with PHP = 8.1 and a database
 and ssh-access.
 
 Have installed:
@@ -106,7 +106,7 @@ Click "save"
 
 Create Cronjob (for example every hour):
 
-cd ~/web/web && php  ~/.composer/vendor/bin/drush.php cron
+AS described in https://www.drupal.org/docs/administering-a-drupal-site/cron-automated-tasks/cron-automated-tasks-overview 
 
 **Your Site should be done.**
 
