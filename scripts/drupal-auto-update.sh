@@ -41,12 +41,12 @@ then
 else
  #printf "oh-oh."
  cd ../web/
- UPDATE_MASTER_MESSAGE=$(bash ../scripts/update_master.sh 2>&1)
+ UPGRADE_MASTER_MESSAGE=$(bash ../scripts/upgrade_master.sh 2>&1)
  bash_user=$(whoami)
 #write to stdErr. stdErr will be sent via email.
 #use pattern: You should never pass a variable to the FORMAT string as it may lead to errors and security vulnerabilities.
  (>&2 printf "H5PLabor %s was updated!\n\n" "$bash_user")
  (>&2 printf "Pfad: %s \nNotice: %s\n" "$PWD" "$UPDATE_MESSAGE")
- (>&2 printf "\nUPDATE_MASTER: %s \n" "$UPDATE_MASTER_MESSAGE")
+ (>&2 printf "\nUPGRADE_MASTER: %s \n" "$UPGRADE_MASTER_MESSAGE")
  exit 1;
 fi
