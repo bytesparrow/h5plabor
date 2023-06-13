@@ -9,6 +9,10 @@ libraries:
   - barrio_h5plabor/bootstrap
   - barrio_h5plabor/global-styling
 
+#remove bootstrap from parent theme as we're using different pathes
+libraries-override:
+  bootstrap_barrio/bootstrap: false
+
 regions:
   top_header: 'Top header'
   top_header_form: 'Top header form'
