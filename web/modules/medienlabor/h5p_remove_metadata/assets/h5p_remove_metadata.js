@@ -17,7 +17,7 @@
         {
 
             setTimeout(function () {
-                if (typeof window[0] !== "undefined")
+                if (typeof window[0] !== "undefined" && typeof window[0].H5PEditor !== "undefined")
                 {
                     window[0].H5PEditor.$("head").append('<style>.h5p-metadata-button-wrapper{display:none;}</style>');
                 }
