@@ -764,16 +764,16 @@
         },
         {
             "name": "consolidation/self-update",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/self-update.git",
-                "reference": "714b09fdf0513f83292874bb12de0566066040c2"
+                "reference": "972a1016761c9b63314e040836a12795dff6953a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/self-update/zipball/714b09fdf0513f83292874bb12de0566066040c2",
-                "reference": "714b09fdf0513f83292874bb12de0566066040c2",
+                "url": "https://api.github.com/repos/consolidation/self-update/zipball/972a1016761c9b63314e040836a12795dff6953a",
+                "reference": "972a1016761c9b63314e040836a12795dff6953a",
                 "shasum": ""
             },
             "require": {
@@ -813,9 +813,9 @@
             "description": "Provides a self:update command for Symfony Console applications.",
             "support": {
                 "issues": "https://github.com/consolidation/self-update/issues",
-                "source": "https://github.com/consolidation/self-update/tree/2.1.0"
+                "source": "https://github.com/consolidation/self-update/tree/2.2.0"
             },
-            "time": "2023-02-21T19:33:55+00:00"
+            "time": "2023-03-18T01:37:41+00:00"
         },
         {
             "name": "consolidation/site-alias",
@@ -1343,25 +1343,29 @@
         },
         {
             "name": "doctrine/deprecations",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/deprecations.git",
-                "reference": "8cffffb2218e01f3b370bf763e00e81697725259"
+                "reference": "612a3ee5ab0d5dd97b7cf3874a6efe24325efac3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/8cffffb2218e01f3b370bf763e00e81697725259",
-                "reference": "8cffffb2218e01f3b370bf763e00e81697725259",
+                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/612a3ee5ab0d5dd97b7cf3874a6efe24325efac3",
+                "reference": "612a3ee5ab0d5dd97b7cf3874a6efe24325efac3",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1|^8.0"
+                "php": "^7.1 || ^8.0"
             },
             "require-dev": {
                 "doctrine/coding-standard": "^9",
-                "phpunit/phpunit": "^7.5|^8.5|^9.5",
-                "psr/log": "^1|^2|^3"
+                "phpstan/phpstan": "1.4.10 || 1.10.15",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
+                "psalm/plugin-phpunit": "0.18.4",
+                "psr/log": "^1 || ^2 || ^3",
+                "vimeo/psalm": "4.30.0 || 5.12.0"
             },
             "suggest": {
                 "psr/log": "Allows logging deprecations via PSR-3 logger implementation"
@@ -1380,9 +1384,9 @@
             "homepage": "https://www.doctrine-project.org/",
             "support": {
                 "issues": "https://github.com/doctrine/deprecations/issues",
-                "source": "https://github.com/doctrine/deprecations/tree/v1.1.0"
+                "source": "https://github.com/doctrine/deprecations/tree/v1.1.1"
             },
-            "time": "2023-05-29T18:55:17+00:00"
+            "time": "2023-06-03T09:27:29+00:00"
         },
         {
             "name": "doctrine/event-manager",
@@ -2976,26 +2980,26 @@
         },
         {
             "name": "drupal/node_view_permissions",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/node_view_permissions.git",
-                "reference": "8.x-1.5"
+                "reference": "8.x-1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/node_view_permissions-8.x-1.5.zip",
-                "reference": "8.x-1.5",
-                "shasum": "e9f0bc9d1285e57233ab1b11833b55dda6d483f0"
+                "url": "https://ftp.drupal.org/files/projects/node_view_permissions-8.x-1.6.zip",
+                "reference": "8.x-1.6",
+                "shasum": "f56e0d43f41f384c73d93e18abfbe38809533d5e"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.5",
-                    "datestamp": "1622716915",
+                    "version": "8.x-1.6",
+                    "datestamp": "1686297669",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3008,20 +3012,20 @@
             ],
             "authors": [
                 {
-                    "name": "adci_contributor",
-                    "homepage": "https://www.drupal.org/user/1830536"
-                },
-                {
                     "name": "adcillc",
                     "homepage": "https://www.drupal.org/user/366450"
                 },
                 {
-                    "name": "hoter",
-                    "homepage": "https://www.drupal.org/user/1677790"
+                    "name": "adci_contributor",
+                    "homepage": "https://www.drupal.org/user/1830536"
+                },
+                {
+                    "name": "hxdef",
+                    "homepage": "https://www.drupal.org/user/2622115"
                 }
             ],
-            "description": "Enables permissions \"View own content\" and \"View any content\" for each content type.",
-            "homepage": "https://www.drupal.org/project/node_view_permissions",
+            "description": "enables permissions 'View own content' and 'View any content' for each content type on permissions page",
+            "homepage": "http://drupal.org/project/node_view_permissions",
             "support": {
                 "source": "https://git.drupalcode.org/project/node_view_permissions"
             }
@@ -3403,16 +3407,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "3.2.5",
+            "version": "3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "b531a2311709443320c786feb4519cfaf94af796"
+                "reference": "e5997fa97e8790cdae03a9cbd5e78e45e3c7bda7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/b531a2311709443320c786feb4519cfaf94af796",
-                "reference": "b531a2311709443320c786feb4519cfaf94af796",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/e5997fa97e8790cdae03a9cbd5e78e45e3c7bda7",
+                "reference": "e5997fa97e8790cdae03a9cbd5e78e45e3c7bda7",
                 "shasum": ""
             },
             "require": {
@@ -3458,7 +3462,7 @@
             ],
             "support": {
                 "issues": "https://github.com/egulias/EmailValidator/issues",
-                "source": "https://github.com/egulias/EmailValidator/tree/3.2.5"
+                "source": "https://github.com/egulias/EmailValidator/tree/3.2.6"
             },
             "funding": [
                 {
@@ -3466,7 +3470,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-01-02T17:26:14+00:00"
+            "time": "2023-06-01T07:04:22+00:00"
         },
         {
             "name": "enlightn/security-checker",
@@ -7794,16 +7798,16 @@
         },
         {
             "name": "twbs/bootstrap",
-            "version": "v5.2.3",
+            "version": "v5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "cb021439c683d9805e2864c58095b92d405e9b11"
+                "reference": "60098ac499d30aa50575b0b7137391c06ef25429"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/cb021439c683d9805e2864c58095b92d405e9b11",
-                "reference": "cb021439c683d9805e2864c58095b92d405e9b11",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/60098ac499d30aa50575b0b7137391c06ef25429",
+                "reference": "60098ac499d30aa50575b0b7137391c06ef25429",
                 "shasum": ""
             },
             "replace": {
@@ -7838,9 +7842,9 @@
             ],
             "support": {
                 "issues": "https://github.com/twbs/bootstrap/issues",
-                "source": "https://github.com/twbs/bootstrap/tree/v5.2.3"
+                "source": "https://github.com/twbs/bootstrap/tree/v5.3.0"
             },
-            "time": "2022-11-21T18:19:01+00:00"
+            "time": "2023-05-30T15:15:55+00:00"
         },
         {
             "name": "twig/twig",
