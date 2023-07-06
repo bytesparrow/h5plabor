@@ -46,7 +46,7 @@ tips:
     label: 'Sprachen anpassen'
     weight: 5
     selector: .dropbutton-wrapper
-    body: '<p>Es werden Manipulationen für das Bearbeiten und Löschen einer Sprache bereit gestellt.</p><p>Der Name und die Schreibrichtung der Sprache kann bearbeitet werden.</p><p>Gelöschte Sprachen können zu einem späteren Zeitpunkt wieder hinzugefügt werden. Beim Löschen einer Sprache werden sämtliche Übersetzungen der Benutzeroberfläche entfernt und Inhalte in dieser Sprache werden auf eine neutrale Sprache zurückgesetzt. Bitte beachten, dass sich die Standardsprache einer Website nicht löschen lässt.</p>'
+    body: '<p>Es werden Aktionen für das Bearbeiten und Löschen einer Sprache bereit gestellt.</p><p>Der Name und die Schreibrichtung der Sprache kann bearbeitet werden.</p><p>Gelöschte Sprachen können zu einem späteren Zeitpunkt wieder hinzugefügt werden. Beim Löschen einer Sprache werden sämtliche Übersetzungen der Benutzeroberfläche entfernt und Inhalte in dieser Sprache werden auf eine neutrale Sprache zurückgesetzt. Bitte beachten, dass sich die Standardsprache einer Website nicht löschen lässt.</p>'
   language-continue:
     id: language-continue
     plugin: text

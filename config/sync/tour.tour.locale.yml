@@ -18,7 +18,7 @@ tips:
     plugin: text
     label: 'Benutzeroberfläche übersetzen'
     weight: 1
-    body: 'Diese Seite erlaubt es die Benutzeroberfläche zu übersetzen oder bestehende Übersetzungen zu abzuändern. Falls die Website eingangs in Englisch installiert wurde, muss zuerst eine weitere Sprache auf der <a href="[site:url]admin/config/regional/language">Sprachen-Seite</a> hinzugefügt werden, um diese Seite nutzen zu können.'
+    body: 'Diese Seite erlaubt es die Benutzeroberfläche zu übersetzen oder bestehende Übersetzungen abzuändern. Falls die Website eingangs in Englisch installiert wurde, muss zuerst eine weitere Sprache auf der Seite <a href="[site:url]admin/config/regional/language">Sprachen</a> hinzugefügt werden, um diese Seite nutzen zu können.'
   locale-language:
     id: locale-language
     plugin: text
@@ -32,14 +32,14 @@ tips:
     label: Suche
     weight: 3
     selector: '#edit-string'
-    body: 'Eingabe eines bestimmten Wortes oder Satzes, das übersetzt werden soll. Es kann auch nur ein Teil eines Wortes angegeben werden.'
+    body: 'Ein bestimmtes Wort oder einen Satz eingeben, der übersetzt werden soll. Es kann auch nur der Teil eines Wortes angegeben werden.'
   locale-filter:
     id: locale-filter
     plugin: text
     label: 'Die Suche eingrenzen'
     weight: 4
     selector: '#edit-translation'
-    body: 'Es kann nach nicht übersetzten Zeichenketten gesucht werden, um etwas zu übersetzen, was bisher noch nicht übersetzt worden ist. Falls eine bereits bestehende Übersetzung abgeändert werden soll, dann sollte besser nur nach bereits übersetzten Zeichenketten gesucht werden.'
+    body: 'Es kann nach nicht übersetzten Zeichenketten gesucht werden, um etwas zu übersetzen, was bisher noch nicht übersetzt worden ist. Falls eine bereits bestehende Übersetzung abgeändert werden soll, sollte besser nur nach bereits übersetzten Zeichenketten gesucht werden.'
   locale-submit:
     id: locale-submit
     plugin: text
