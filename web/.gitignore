@@ -47,3 +47,4 @@ sites/simpletest
 themes/contrib
 modules/contrib
 /README.md
+/.php-ini
