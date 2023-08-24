@@ -3100,7 +3100,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/panels.git",
-                "reference": "13d85b51b5bec131be68fb7946bca689d98f841e"
+                "reference": "ce7e9195d192125c890e2d632f28f78f7b45d955"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10",
@@ -3118,8 +3118,8 @@
                     "dev-8.x-4.x": "4.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-4.7+1-dev",
-                    "datestamp": "1674980979",
+                    "version": "8.x-4.7+2-dev",
+                    "datestamp": "1692860142",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
