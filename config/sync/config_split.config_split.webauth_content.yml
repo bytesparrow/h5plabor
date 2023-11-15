@@ -6,6 +6,8 @@ id: webauth_content
 label: webauth_content
 description: 'contains the configuration [views etc] for the webauth module'
 weight: 0
+stackable: false
+no_patching: false
 storage: folder
 folder: modules/medienlabor/webauth/config/install
 module:

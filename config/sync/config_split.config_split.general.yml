@@ -7,6 +7,7 @@ label: general
 description: 'general features of h5plabor'
 weight: 0
 stackable: false
+no_patching: false
 storage: folder
 folder: ../config/general
 module:

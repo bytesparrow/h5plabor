@@ -7,6 +7,7 @@ label: config-ui
 description: 'UI-Modules for views, pagemanager etc'
 weight: 0
 stackable: false
+no_patching: false
 storage: folder
 folder: ../config/config_ui
 module:
