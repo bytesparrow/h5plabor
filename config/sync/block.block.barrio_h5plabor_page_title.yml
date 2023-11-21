@@ -2,6 +2,8 @@ uuid: 52d58462-3b56-421a-9eb7-e538f1cdbf5f
 langcode: de
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - barrio_h5plabor
 _core:
@@ -17,4 +19,8 @@ settings:
   label: Seitentitel
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

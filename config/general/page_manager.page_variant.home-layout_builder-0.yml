@@ -1,0 +1,52 @@
+uuid: c894e87b-be6a-40ce-b95e-d37394b57207
+langcode: de
+status: true
+dependencies:
+  config:
+    - page_manager.page.home
+    - views.view.h5p_list
+  module:
+    - layout_discovery
+    - user
+    - views
+id: home-layout_builder-0
+label: loggedin
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 6b7ec5de-f52e-411a-ad96-5bf857d8329a
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: myh5ps
+        context_mapping: {  }
+      components:
+        f355ce1e-da2e-4738-8153-6940b18e02eb:
+          uuid: f355ce1e-da2e-4738-8153-6940b18e02eb
+          region: content
+          configuration:
+            id: 'views_block:h5p_list-h5p_block'
+            label: 'Meine H5Ps'
+            label_display: visible
+            provider: views
+            context_mapping: {  }
+            views_label: 'Meine H5Ps'
+            items_per_page: none
+          weight: 0
+          additional: {  }
+      third_party_settings: {  }
+page: home
+selection_criteria:
+  -
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
+selection_logic: and
+static_context: {  }

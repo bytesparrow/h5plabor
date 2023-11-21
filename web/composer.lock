@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3380591574787f837068ce61ebd709eb",
+    "content-hash": "8007d051eecdcde1dbcf1d7b2978ceae",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2822,88 +2822,6 @@
                 "source": "https://git.drupal.org/project/page_manager.git",
                 "issues": "https://www.drupal.org/project/issues/page_manager",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
-            }
-        },
-        {
-            "name": "drupal/panels",
-            "version": "dev-4.x",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/panels.git",
-                "reference": "4dfd6a07adac69525832b94f6745ac3247a6cd92"
-            },
-            "require": {
-                "drupal/core": "^9.2 || ^10",
-                "drupal/ctools": "^3.12 || ^4.0",
-                "drupal/jquery_ui_droppable": "^1.0 || ^2.0"
-            },
-            "require-dev": {
-                "drupal/jquery_ui_droppable": "*",
-                "drupal/page_manager": "^4"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-4.x": "4.x-dev",
-                    "dev-8.x-4.x": "4.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-4.7+5-dev",
-                    "datestamp": "1693457160",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Jakob Perry",
-                    "homepage": "https://www.drupal.org/u/japerry"
-                },
-                {
-                    "name": "Samuel Mortenson",
-                    "homepage": "https://www.drupal.org/u/samuel.mortenson"
-                },
-                {
-                    "name": "See other contributors",
-                    "homepage": "https://www.drupal.org/node/74958/committers"
-                },
-                {
-                    "name": "joelpittet",
-                    "homepage": "https://www.drupal.org/user/160302"
-                },
-                {
-                    "name": "Letharion",
-                    "homepage": "https://www.drupal.org/user/373603"
-                },
-                {
-                    "name": "merlinofchaos",
-                    "homepage": "https://www.drupal.org/user/26979"
-                },
-                {
-                    "name": "neclimdul",
-                    "homepage": "https://www.drupal.org/user/48673"
-                },
-                {
-                    "name": "phenaproxima",
-                    "homepage": "https://www.drupal.org/user/205645"
-                },
-                {
-                    "name": "samuel.mortenson",
-                    "homepage": "https://www.drupal.org/user/2582268"
-                }
-            ],
-            "description": "Core Panels display functions; provides no external UI, at least one other Panels module should be enabled.",
-            "homepage": "https://www.drupal.org/project/panels",
-            "support": {
-                "source": "http://git.drupal.org/project/panels.git",
-                "issues": "https://www.drupal.org/project/issues/panels",
-                "irc": "irc://irc.freenode.org/drupal-scotch"
             }
         },
         {

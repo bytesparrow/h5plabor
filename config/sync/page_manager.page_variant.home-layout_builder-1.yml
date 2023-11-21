@@ -1,0 +1,54 @@
+uuid: 87251c2b-4433-4e3a-8819-8861537955c5
+langcode: de
+status: true
+dependencies:
+  config:
+    - page_manager.page.home
+  content:
+    - 'block_content:reference_block:b04be800-678f-473c-a6ea-93b888895024'
+  module:
+    - block_content
+    - layout_discovery
+    - user
+id: home-layout_builder-1
+label: loggedout
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 7ee21319-c215-455e-9da2-b125be474d36
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: h5plabor-infotext
+        context_mapping: {  }
+      components:
+        8e5441d5-e69b-44f3-bb5a-1bdf8b30473e:
+          uuid: 8e5441d5-e69b-44f3-bb5a-1bdf8b30473e
+          region: content
+          configuration:
+            id: 'block_content:b04be800-678f-473c-a6ea-93b888895024'
+            label: '[block] H5PLabor-About'
+            label_display: '0'
+            provider: block_content
+            status: true
+            info: ''
+            view_mode: vollstaendig_ohne_titles
+            context_mapping: {  }
+          weight: 0
+          additional: {  }
+      third_party_settings: {  }
+page: home
+selection_criteria:
+  -
+    id: user_role
+    negate: true
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
+selection_logic: and
+static_context: {  }

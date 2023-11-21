@@ -44,8 +44,6 @@ module:
   options: 0
   page_cache: 0
   page_manager: 0
-  panels: 0
-  panels_ipe: 0
   path: 0
   path_alias: 0
   search: 0
