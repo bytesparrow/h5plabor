@@ -32,7 +32,9 @@ class WebauthController extends ControllerBase {
     $session->set('webauth_login_prepared', true);
     $session->migrate();
 
-    return new RedirectResponse('/' . drupal_get_path('module', 'webauth') . '/webauth_protected?q=' . time(), 302);
+    $webauth_path = \Drupal::service('extension.list.module')->getPath('webauth');
+    $url = Url::fromUserInput('/'.$webauth_path. '/webauth_protected?q=' . time())->toString();
+    return new RedirectResponse($url, 302);
   }
 
   /**

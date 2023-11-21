@@ -125,8 +125,8 @@ class WebauthAuthentication implements AuthenticationProviderInterface {
   public function createNewUser($authname) {
     // Generating password. It won't be used, but we still don't want
     // to use empty password or same password for all users.
-    $pass = user_password(12);
-
+    $pass = \Drupal::service("password_generator")->generate(12);
+    
     $data = [
       'name' => $authname,
       'pass' => $pass,

@@ -25,7 +25,6 @@ if(!empty($_SERVER['WEBAUTH_USER']))
  }
 
 
-
  
 //weiterleiten per $_GET geht ja auch nicht, da ich nicht auf den secret key komme
    
