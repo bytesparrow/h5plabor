@@ -61,7 +61,7 @@ module:
   views: 10
   standard: 1000
 theme:
-  seven: 0
   barrio_h5plabor: 0
   bootstrap_barrio: 0
+  claro: 0
 profile: standard

@@ -105,3 +105,4 @@ bootstrap_barrio_table_hover: 1
 bootstrap_barrio_table_head: ''
 bootstrap_barrio_image_fluid: false
 bootstrap_barrio_tabs_style: ''
+bootstrap_barrio_enable_color: false
