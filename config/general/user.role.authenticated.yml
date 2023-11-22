@@ -6,6 +6,7 @@ dependencies:
     - filter.format.basic_html
     - node.type.h5p
   module:
+    - file
     - filter
     - h5p
     - h5peditor
@@ -27,6 +28,7 @@ permissions:
   - 'copy own h5ps'
   - 'create h5p content'
   - 'delete h5p revisions'
+  - 'delete own files'
   - 'delete own h5p content'
   - 'download own h5ps'
   - 'edit own h5p content'
