@@ -1,9 +1,9 @@
 #!/bin/bash
 ###################################
-this script will
-    - pull the current version from git
-    - composer install the current version
-    - execute update_master script
+#this script will
+#    - pull the current version from git
+#    - composer install the current version
+#    - execute update_master script
 ###################################
 #environment needs some infos about pathes - keep line! ("." means "source")
 . $( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )/get-drush-include-path.sh
