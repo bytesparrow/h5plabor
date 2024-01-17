@@ -11,9 +11,9 @@ palette:
   titleslogan: '#ffffff'
   text: '#3b3b3b'
   link: '#337AB7'
-logo: 'public://color/barrio_h5plabor-2b1c5fb3/logo.svg'
+logo: 'public://color/barrio_h5plabor-65e6a7a4/logo.svg'
 stylesheets:
-  - 'public://color/barrio_h5plabor-2b1c5fb3/colors.css'
+  - 'public://color/barrio_h5plabor-65e6a7a4/colors.css'
 files:
-  - 'public://color/barrio_h5plabor-2b1c5fb3/logo.svg'
-  - 'public://color/barrio_h5plabor-2b1c5fb3/colors.css'
+  - 'public://color/barrio_h5plabor-65e6a7a4/logo.svg'
+  - 'public://color/barrio_h5plabor-65e6a7a4/colors.css'

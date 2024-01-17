@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.vollstaendiger_inhalt_ohne_title
 label: 'Vollständiger Inhalt ohne title'
+description: ''
 targetEntityType: node
 cache: true
