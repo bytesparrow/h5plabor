@@ -6,5 +6,5 @@ _core:
   default_config_hash: yoNVreoTdTZTY7GuE8fI9Jmxqdz8vlo4ZJKixMNSosw
 name: Tags
 vid: tags
-description: 'Mit Schlagwörtern können Artikel zu verwandten Themen in Kategorien zusammengefasst werden.'
+description: 'Verwenden Sie Schlagwörter, um Artikel zu ähnlichen Themen in Kategorien zusammenzufassen.'
 weight: 0

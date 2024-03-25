@@ -9,7 +9,7 @@ _core:
 id: user_admin_people
 label: Benutzer
 module: user
-description: 'Menschen finden und verwalten, die mit Ihrer Website interagieren.'
+description: 'Personen finden und verwalten, die mit Ihrer Website interagieren.'
 tag: default
 base_table: users_field_data
 base_field: uid
@@ -906,7 +906,7 @@ display:
       menu:
         type: 'default tab'
         title: Liste
-        description: 'Menschen finden und verwalten, die mit Ihrer Website interagieren.'
+        description: 'Personen finden und verwalten, die mit Ihrer Website interagieren.'
         weight: -10
         menu_name: admin
         context: ''
