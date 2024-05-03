@@ -75,7 +75,7 @@ display:
           plugin_id: text_custom
           label: ''
           empty: true
-          content: 'Es wurde noch kein Inhalt für die Startseite erstellt.<br>Lesen Sie das <a target="_blank" href="https://www.drupal.org/de/docs/user_guide/de/index.html"> Benutzerhandbuch</a>, um mehr über das Erstellen von Websites mit Drupal zu erfahren.'
+          content: 'Es wurde noch kein Inhalt für die Startseite erstellt.<br>Lesen Sie das <a target="_blank" href="https://www.drupal.org/de/docs/user_guide/de/index.html">Benutzerhandbuch</a>, um mehr über das Erstellen von Websites mit Drupal zu erfahren.'
           tokenize: false
         node_listing_empty:
           id: node_listing_empty
