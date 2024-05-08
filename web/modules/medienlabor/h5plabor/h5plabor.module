@@ -65,7 +65,18 @@ function h5plabor_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
 
     case 'h5p':
       // Setting the title with the value of h5ptitle.
-      $h5p_content = \Drupal::request()->request->get('field_h5p')[0]['h5p_content']['parameters'];
+      try{
+        //new Symfony-API. GET is deprecated, ALL is correct. Add try-catch-block.
+        $h5p_content = \Drupal::request()->request->all('field_h5p')[0]['h5p_content']['parameters'];
+      }
+      catch(\Symfony\Component\HttpFoundation\Exception\BadRequestException $e)
+      {
+        \Drupal::messenger()->addError("There has been an error processing your request: X36KL95. Please contact us ASAP to have it fixed!");
+         $entity->setTitle("H5P with failure X36KL95");
+         return;
+      }
+      
+      
       try {
         $h5p_content_decoded = GuzzleHttp\json_decode($h5p_content);
         $h5ptitle = $h5p_content_decoded->metadata->title;
