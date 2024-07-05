@@ -1,42 +1,4 @@
-taxonomies:
-  tags: {  }
-menus:
-  -
-    menu_name: footer
-    title: Datenschutzerklärung
-    parent: null
-    uri: 'https://www.uni-augsburg.de/de/impressum/datenschutz/'
-    link_title: ''
-    description: null
-    enabled: '1'
-    expanded: '0'
-    weight: '-49'
-    langcode: de
-    uuid: 0827350c-9fb2-40c3-bc59-b8e214c84c8c
-  -
-    menu_name: footer
-    title: 'Zum Medienlabor'
-    parent: null
-    uri: 'https://ml.phil.uni-augsburg.de/'
-    link_title: ''
-    description: null
-    enabled: '1'
-    expanded: '0'
-    weight: '0'
-    langcode: de
-    uuid: 7f28f99c-6b96-433e-affb-a1b7bfa3b8bd
-  -
-    menu_name: footer
-    title: Über
-    parent: null
-    uri: 'entity:node/1'
-    link_title: ''
-    description: 'Über das H5PLabor'
-    enabled: '1'
-    expanded: '0'
-    weight: '4'
-    langcode: de
-    uuid: 2ae33176-1f77-4245-8c3d-e1b3b93ca0d6
+langcode: de
 blocks:
   -
     info: '[block] H5PLabor-About'
@@ -76,3 +38,42 @@ blocks:
           value: "<p>Hallo auf H5PLabor</p>\r\n\r\n<p>Sie sind ausgeloggt. Lorem Ipsum.</p>\r\n"
           summary: ''
           format: basic_html
+menus:
+  -
+    menu_name: footer
+    title: Datenschutzerklärung
+    parent: null
+    uri: 'https://www.uni-augsburg.de/de/impressum/datenschutz/'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: de
+    uuid: 0827350c-9fb2-40c3-bc59-b8e214c84c8c
+  -
+    menu_name: footer
+    title: 'Zum Medienlabor'
+    parent: null
+    uri: 'https://ml.phil.uni-augsburg.de/'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: de
+    uuid: 7f28f99c-6b96-433e-affb-a1b7bfa3b8bd
+  -
+    menu_name: footer
+    title: Über
+    parent: null
+    uri: 'entity:node/1'
+    link_title: ''
+    description: 'Über das H5PLabor'
+    enabled: true
+    expanded: false
+    weight: 4
+    langcode: de
+    uuid: 2ae33176-1f77-4245-8c3d-e1b3b93ca0d6
+taxonomies:
+  tags: {  }

@@ -67,7 +67,7 @@ display:
           submit_button: Anwenden
           reset_button: false
           reset_button_label: Zurücksetzen
-          exposed_sorts_label: 'Sortieren nach'
+          exposed_sorts_label: Sortierung
           expose_sort_order: true
           sort_asc_label: Aufsteigend
           sort_desc_label: Absteigend

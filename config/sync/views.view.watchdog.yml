@@ -440,6 +440,7 @@ display:
         type: mini
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 50
           total_pages: null
           id: 0
@@ -460,7 +461,7 @@ display:
           submit_button: Anwenden
           reset_button: true
           reset_button_label: Zurücksetzen
-          exposed_sorts_label: 'Sortieren nach'
+          exposed_sorts_label: Sortierung
           expose_sort_order: false
           sort_asc_label: Aufsteigend
           sort_desc_label: Absteigend

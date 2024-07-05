@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: reference_block
 label: Reference-Block
-revision: 0
+revision: false
 description: 'Has a reference to a node'

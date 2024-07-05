@@ -249,10 +249,11 @@ display:
       pager:
         type: full
         options:
+          pagination_heading_level: h4
           items_per_page: 50
           tags:
-            next: 'Nächste Seite ›'
-            previous: '‹ Vorherige Seite'
+            next: 'Weiter ›'
+            previous: '‹ Zurück'
             first: '« Anfang'
             last: 'Ende »'
       exposed_form:
@@ -261,7 +262,7 @@ display:
           submit_button: Anwenden
           reset_button: true
           reset_button_label: Zurücksetzen
-          exposed_sorts_label: 'Sortieren nach'
+          exposed_sorts_label: Sortierung
           expose_sort_order: true
           sort_asc_label: Aufsteigend
           sort_desc_label: Absteigend

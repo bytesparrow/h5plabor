@@ -273,12 +273,13 @@ display:
         type: mini
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 50
           total_pages: null
           id: 0
           tags:
-            next: 'Nächste Seite ›'
-            previous: '‹ Vorherige Seite'
+            next: 'Weiter ›'
+            previous: '‹ Zurück'
           expose:
             items_per_page: false
             items_per_page_label: 'Elemente pro Seite'
@@ -293,7 +294,7 @@ display:
           submit_button: Anwenden
           reset_button: false
           reset_button_label: Zurücksetzen
-          exposed_sorts_label: 'Sortieren nach'
+          exposed_sorts_label: Sortierung
           expose_sort_order: true
           sort_asc_label: Aufsteigend
           sort_desc_label: Absteigend

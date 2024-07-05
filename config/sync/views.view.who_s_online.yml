@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: t9qu6R6PnnbZNOft0SpIMxwCg6VCfaX3aW2W-NjeFyc
 id: who_s_online
-label: '„Wer ist online“-Block'
+label: Wer-ist-online-Block
 module: user
 description: 'Zeigt die Benutzernamen der zuletzt aktiven Benutzer und die Gesamtzahl der aktiven Benutzer.'
 tag: default
@@ -67,7 +67,7 @@ display:
           submit_button: Anwenden
           reset_button: false
           reset_button_label: Zurücksetzen
-          exposed_sorts_label: 'Sortieren nach'
+          exposed_sorts_label: Sortierung
           expose_sort_order: true
           sort_asc_label: Aufsteigend
           sort_desc_label: Absteigend

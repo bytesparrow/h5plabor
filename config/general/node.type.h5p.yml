@@ -5,7 +5,7 @@ dependencies: {  }
 name: H5P
 type: h5p
 description: 'Der passende Content-Type um H5Ps zu erstellen'
-help: ''
+help: null
 new_revision: true
 preview_mode: 0
 display_submitted: true
