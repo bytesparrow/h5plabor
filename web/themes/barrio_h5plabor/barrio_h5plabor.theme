@@ -6,6 +6,16 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element\StatusMessages;
+
+/**
+ * fixes broken system messages (H5P fgfhfgh wurde erstellt ohne Kasten oder Design)
+ * @param type $variables
+ */
+function barrio_h5plabor_preprocess_block__system_messages_block(&$variables) {
+  $variables['content'] = StatusMessages::renderMessages();
+  $variables['#cache']['max-age'] = 0;
+}
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
