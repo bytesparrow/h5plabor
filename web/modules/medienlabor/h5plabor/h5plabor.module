@@ -143,11 +143,13 @@ function _h5plabor_alter_h5p_form(&$form, FormState $form_state, $form_id) {  #d
   $form['path']['#access'] = FALSE;
   $readable_delete_timestamp = _h5plabor_get_readable_orphan_delete_timediff();
   $delete_notice_text = t('NOTE: H5P-objects will be deleted %stamp after their last usage.', array('%stamp' => $readable_delete_timestamp));
+  $datenschutz_notice_text = 'Es ist untersagt, personenbezogene Daten in jeglicher Form (Text oder audiovisuelle Medien) ohne vorheriger Einholung einer schriftlichen Zustimmung hochzuladen.';
 
   $form['field_h5p']['widget'][0]['h5p_content']['clear_content'] ['#access'] = FALSE;
   $form['field_h5p']['widget'][0]['h5p_content']['frame'] ['#access'] = FALSE;
   $form['field_h5p']['widget'][0]['h5p_content']['copyright'] ['#access'] = FALSE;
   $form['field_h5p']['#prefix'] = '<div class="alert alert-primary" role="alert">' . $delete_notice_text . '</div>';
+  $form['field_h5p']['#suffix'] = '<div class="alert alert-warning" role="alert">' . $datenschutz_notice_text . '</div>';   
   //add validation. die fehlt dem H5P-Modul noch. Nach Hochladen-Klick ohne "Benutzen" klicken, ist der Wert leer & führt zu exceptions
   //NUR FÜR DEN HUB BENÖTIGT $form['#validate'][] = '_h5plabor_form_h5p_validate';
 }
