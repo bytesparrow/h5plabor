@@ -30,8 +30,9 @@ complete_list:
   - h5p.settings
   - language.content_settings.node.h5p
   - node.type.h5p
-  - page_manager.page_variant.home-panels_variant-0
-  - page_manager.page_variant.home-panels_variant-1
+  - system.menu.footer
   - user.role.authenticated
   - views.view.h5p_list
+  - page_manager.page_variant.home-panels_variant-0
+  - page_manager.page_variant.home-panels_variant-1
 partial_list: {  }
