@@ -1,0 +1,173 @@
+1:
+  id:
+    value: '1'
+  uuid:
+    value: 0827350c-9fb2-40c3-bc59-b8e214c84c8c
+  revision_id:
+    value: '1'
+  langcode:
+    value: de
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1630576092'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: Datenschutzerklärung
+  description: false
+  menu_name:
+    value: footer
+  link:
+    uri: 'https://www.uni-augsburg.de/de/impressum/datenschutz/'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '0'
+  weight:
+    value: '-49'
+  expanded:
+    value: '0'
+  parent: false
+  changed:
+    value: '1630576092'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+2:
+  id:
+    value: '2'
+  uuid:
+    value: 7f28f99c-6b96-433e-affb-a1b7bfa3b8bd
+  revision_id:
+    value: '2'
+  langcode:
+    value: de
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1630576092'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: 'Zum Medienlabor'
+  description: false
+  menu_name:
+    value: footer
+  link:
+    uri: 'https://ml.phil.uni-augsburg.de/'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '0'
+  weight:
+    value: '0'
+  expanded:
+    value: '0'
+  parent: false
+  changed:
+    value: '1630576092'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+3:
+  id:
+    value: '3'
+  uuid:
+    value: 2ae33176-1f77-4245-8c3d-e1b3b93ca0d6
+  revision_id:
+    value: '3'
+  langcode:
+    value: de
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1630576092'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: Über
+  description:
+    value: 'Über das H5PLabor'
+  menu_name:
+    value: footer
+  link:
+    uri: 'entity:node/1'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '0'
+  weight:
+    value: '4'
+  expanded:
+    value: '0'
+  parent: false
+  changed:
+    value: '1630576092'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
+4:
+  id:
+    value: '4'
+  uuid:
+    value: 9c6116f5-70a4-440a-9ae0-db27d39e991f
+  revision_id:
+    value: '4'
+  langcode:
+    value: de
+  bundle:
+    value: menu_link_content
+  revision_created:
+    value: '1732709237'
+  revision_user: false
+  revision_log_message: false
+  enabled:
+    value: '1'
+  title:
+    value: Datenschutzhinweise
+  description: false
+  menu_name:
+    value: footer
+  link:
+    uri: 'entity:node/62'
+    title: ''
+    options: {  }
+  external:
+    value: '0'
+  rediscover:
+    value: '0'
+  weight:
+    value: '0'
+  expanded:
+    value: '0'
+  parent: false
+  changed:
+    value: '1732709237'
+  default_langcode:
+    value: '1'
+  revision_default:
+    value: '1'
+  revision_translation_affected:
+    value: '1'
