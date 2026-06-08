@@ -36,7 +36,7 @@
         "drupal/node_view_permissions": "^1.5",
         "drupal/page_manager": "^4.0@RC",
         "drupal/structure_sync": "^2.0",
-        "drush/drush": "^12"
+        "drush/drush": "^13"
     },
     "conflict": {
         "drupal/drupal": "*"
