@@ -29,6 +29,6 @@ tips:
   language-add-continue:
     id: language-add-continue
     plugin: text
-    label: 'Übersetzungen wiederverwenden'
+    label: 'Fortsetzung unter'
     weight: 3
     body: '<p>Jetzt, da Sie einen Überblick über die Funktion „Sprachen hinzufügen“ haben, können Sie fortfahren mit:<ul><li>Eine Sprache hinzufügen</li><li>Eine benutzerdefinierte Sprache hinzufügen</li><li><a href="[site:url]admin/config/regional/language">Eingerichtete Sprachen anzeigen</a></li></ul></p>'
