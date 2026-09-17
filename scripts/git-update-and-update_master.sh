@@ -10,7 +10,10 @@
 
 
 drush sset system.maintenance_mode 1
-git pull
+git pull || {
+    echo "Error: git pull failed. Aborting."
+    exit 1
+}
 cd ../web
 composer install
 
