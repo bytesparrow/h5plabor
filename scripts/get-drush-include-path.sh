@@ -1,6 +1,6 @@
 #!/bin/bash
 
 #path von drush in userfolder benoetigt
-export PATH=$PATH:~/drush/:~/.composer/vendor/bin/
+export PATH=$PATH:$PWD/../web/vendor/bin/
 
-export DRUSH_PHP='/opt/plesk/php/8.1/bin/php'
+export DRUSH_PHP='/opt/plesk/php/8.3/bin/php'

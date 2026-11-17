@@ -23,7 +23,11 @@ cd "$(dirname "$0")"
 cd ../web/
 
 #drush refresh cache, send output to null
-drush cache-rebuild   >  /dev/null 2>&1  ||  ((>&2 printf "DRUSH COMMAND NOT FOUND\n\n") && exit 1);# pm-refresh OR warning if drush not found
+drush cache-rebuild > /dev/null 2>&1 || {
+    printf "DRUSH COMMAND NOT FOUND\n\n" >&2
+    exit 1
+}
+
 
 
 #composer-StdErr geht in die message-variable
